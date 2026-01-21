@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pillar & Pew | Faith, Reason & Readiness</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+    <!-- Sticky Navigation -->
+    <custom-navigation></custom-navigation>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen bg-black overflow-hidden">
+        <div class="absolute inset-0 bg-red-900 opacity-20"></div>
+        <div class="relative h-full flex items-center justify-center text-center px-4">
+            <div class="max-w-4xl mx-auto">
+                <h1 class="font-montserrat text-6xl md:text-8xl font-black uppercase text-white mb-4 tracking-tighter">
+                    PILLAR & PEW
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-bold text-red-500 mb-8">
+                    Faith, Reason, and Readiness – Philosophy • Catholic Truth • Gun Culture Hot Takes
+                </h2>
+                <div class="flex gap-4 justify-center">
+                    <a href="#articles" class="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-none font-bold uppercase tracking-wider transition">Read the Latest</a>
+                    <a href="#submit" class="border-2 border-white hover:bg-white hover:text-black text-white px-8 py-3 rounded-none font-bold uppercase tracking-wider transition">Submit Your Piece</a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center">
+            <i data-feather="chevron-down" class="text-white animate-bounce w-12 h-12"></i>
+        </div>
+    </section>
+
+    <!-- What is Pillar and Pew -->
+    <section class="py-20 px-4 max-w-4xl mx-auto">
+        <h2 class="text-4xl font-black uppercase mb-8 text-center">What is <span class="text-red-600">Pillar & Pew</span>?</h2>
+        <p class="text-xl text-center mb-12">
+            A hub for bold, principled writing that stands firm like pillars: deep dives into philosophy,
+            unapologetic Catholic apologetics, and entertaining/practical takes on firearms, gear,
+            shooting sports, and preparedness.
+        </p>
+        <div class="h-1 bg-gradient-to-r from-black via-red-600 to-black my-16"></div>
+    </section>
+
+    <!-- Core Pillars -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-black uppercase mb-12 text-center">Our <span class="text-red-600">Core Pillars</span></h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
+                    <i data-feather="book" class="w-12 h-12 mb-4 text-red-600"></i>
+                    <h3 class="text-2xl font-bold mb-3">Philosophy & Reason</h3>
+                    <p class="mb-4">Deep dives into classical thought and modern applications</p>
+                    <a href="#" class="text-red-600 font-bold hover:underline">Explore →</a>
+                </div>
+                <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
+                    <i data-feather="cross" class="w-12 h-12 mb-4 text-red-600"></i>
+                    <h3 class="text-2xl font-bold mb-3">Catholic Truth</h3>
+                    <p class="mb-4">Unapologetic defense of the Faith</p>
+                    <a href="#" class="text-red-600 font-bold hover:underline">Explore →</a>
+                </div>
+                <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
+                    <i data-feather="target" class="w-12 h-12 mb-4 text-red-600"></i>
+                    <h3 class="text-2xl font-bold mb-3">Gun Gear & Shooting</h3>
+                    <p class="mb-4">Practical takes on firearms and tactical equipment</p>
+                    <a href="#" class="text-red-600 font-bold hover:underline">Explore →</a>
+                </div>
+                <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
+                    <i data-feather="zap" class="w-12 h-12 mb-4 text-red-600"></i>
+                    <h3 class="text-2xl font-bold mb-3">Hot Takes & Culture</h3>
+                    <p class="mb-4">Bold commentary on current issues</p>
+                    <a href="#" class="text-red-600 font-bold hover:underline">Explore →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20 max-w-4xl mx-auto px-4">
+        <h2 class="text-4xl font-black uppercase mb-12 text-center">How It <span class="text-red-600">Works</span></h2>
+        <div class="space-y-12">
+            <div class="flex items-start">
+                <div class="bg-red-600 text-white w-12 h-12 flex items-center justify-center font-bold text-xl mr-6">1</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Browse Articles</h3>
+                    <p>Find content by topic or search for specific interests</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="bg-red-600 text-white w-12 h-12 flex items-center justify-center font-bold text-xl mr-6">2</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Read & Engage</h3>
+                    <p>Comment, share, and discuss with fellow readers</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="bg-red-600 text-white w-12 h-12 flex items-center justify-center font-bold text-xl mr-6">3</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Submit Writing</h3>
+                    <p>Contribute your own principled perspectives</p>
+                </div>
+            </div>
+            <div class="flex items-start">
+                <div class="bg-red-600 text-white w-12 h-12 flex items-center justify-center font-bold text-xl mr-6">4</div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-2">Join the Conversation</h3>
+                    <p>Stay updated with our newsletter and future community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Can Contribute -->
+    <section class="py-20 bg-gray-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-4xl font-black uppercase mb-8 text-center">Who Can <span class="text-red-600">Contribute</span>?</h2>
+            <p class="text-xl text-center mb-12">
+                We welcome serious writers from all backgrounds and skill levels who value truth, reason,
+                and principled discourse.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <i data-feather="user" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
+                    <h3 class="font-bold mb-2">Philosophers</h3>
+                    <p class="text-sm">Deep thinkers exploring timeless truths</p>
+                </div>
+                <div class="text-center">
+                    <i data-feather="cross" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
+                    <h3 class="font-bold mb-2">Catholic Defenders</h3>
+                    <p class="text-sm">Those who stand firm in the Faith</p>
+                </div>
+                <div class="text-center">
+                    <i data-feather="target" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
+                    <h3 class="font-bold mb-2">Shooting Enthusiasts</h3>
+                    <p class="text-sm">Practical knowledge from the range</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Your Path to Publishing -->
+    <section class="py-20 max-w-4xl mx-auto px-4" id="submit">
+        <h2 class="text-4xl font-black uppercase mb-8 text-center">Your Path to <span class="text-red-600">Publishing</span></h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="border-2 border-black p-6">
+                <div class="text-5xl font-bold mb-4 text-red-600">1</div>
+                <h3 class="text-xl font-bold mb-2">Read the Guidelines</h3>
+                <p class="mb-4">Understand our submission rules and tone expectations</p>
+                <a href="#" class="text-red-600 font-bold hover:underline">View Guidelines →</a>
+            </div>
+            <div class="border-2 border-black p-6">
+                <div class="text-5xl font-bold mb-4 text-red-600">2</div>
+                <h3 class="text-xl font-bold mb-2">Prepare Your Piece</h3>
+                <p class="mb-4">Structure your arguments and research thoroughly</p>
+                <a href="#" class="text-red-600 font-bold hover:underline">Writing Tips →</a>
+            </div>
+            <div class="border-2 border-black p-6">
+                <div class="text-5xl font-bold mb-4 text-red-600">3</div>
+                <h3 class="text-xl font-bold mb-2">Submit & Publish</h3>
+                <p class="mb-4">Send us your work for review and publication</p>
+                <a href="#" class="text-red-600 font-bold hover:underline">Submit Now →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="py-20 bg-gray-100" id="articles">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-black uppercase mb-12 text-center">Featured <span class="text-red-600">Articles</span></h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white shadow-lg">
+                    <div class="h-48 bg-gray-800"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Aquinas on Natural Law in 2026</h3>
+                        <p class="text-gray-600 mb-4">How classical philosophy applies to modern ethical challenges</p>
+                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
+                    </div>
+                </article>
+                <article class="bg-white shadow-lg">
+                    <div class="h-48 bg-gray-700"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Why Catholics Should Train with Red Dots</h3>
+                        <p class="text-gray-600 mb-4">The spiritual and practical case for modern optics</p>
+                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
+                    </div>
+                </article>
+                <article class="bg-white shadow-lg">
+                    <div class="h-48 bg-gray-600"></div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">Best Budget AR Upgrades – Hot Take</h3>
+                        <p class="text-gray-600 mb-4">Where to spend and where to save on your rifle build</p>
+                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20 max-w-4xl mx-auto px-4">
+        <h2 class="text-4xl font-black uppercase mb-12 text-center">Common <span class="text-red-600">Questions</span></h2>
+        <div class="space-y-4">
+            <details class="border-b border-gray-300 pb-4">
+                <summary class="font-bold text-lg cursor-pointer">What topics do you accept?</summary>
+                <p class="mt-2">We publish content on philosophy, Catholic apologetics, firearms, gear reviews, and cultural commentary that aligns with our principles.</p>
+            </details>
+            <details class="border-b border-gray-300 pb-4">
+                <summary class="font-bold text-lg cursor-pointer">What's your comment policy?</summary>
+                <p class="mt-2">We encourage vigorous but charitable discussion. Personal attacks will be removed.</p>
+            </details>
+            <details class="border-b border-gray-300 pb-4">
+                <summary class="font-bold text-lg cursor-pointer">How often do you publish?</summary>
+                <p class="mt-2">New articles are published weekly, with occasional special editions.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-20 bg-red-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-black uppercase mb-4">Stay Updated</h2>
+            <p class="text-xl mb-8">Get new articles straight to your inbox</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 text-black">
+                <button type="submit" class="bg-black text-white px-8 py-3 font-bold uppercase tracking-wider">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Components -->
+    <script src="components/navigation.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>feather.replace();</script>
+</body>
+</html>
