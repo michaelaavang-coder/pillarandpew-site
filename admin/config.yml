@@ -1,0 +1,61 @@
+backend:
+  name: github
+  repo: michaelaavang-coder/pillarandpew-site   # ← IMPORTANT: Change this to your exact GitHub username/repo name!
+  branch: main
+  squash_merges: true
+
+media_folder: "public/images"      # Where images you upload will be saved
+public_folder: "/images"           # How images show up on your live site
+
+collections:
+  - name: "philosophy"
+    label: "Philosophy & Reason"
+    folder: "content/philosophy"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "Excerpt (short summary for cards)", name: "excerpt", widget: "text", required: true}
+      - {label: "Featured on Homepage?", name: "featured", widget: "boolean", default: false}
+      - {label: "Main Body", name: "body", widget: "markdown", required: true}
+      - {label: "Author", name: "author", widget: "string", default: "Michael"}
+
+  - name: "catholic-polemics"
+    label: "Catholic Polemics"
+    folder: "content/catholic-polemics"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "Excerpt (short summary for cards)", name: "excerpt", widget: "text", required: true}
+      - {label: "Featured on Homepage?", name: "featured", widget: "boolean", default: false}
+      - {label: "Main Body", name: "body", widget: "markdown", required: true}
+      - {label: "Author", name: "author", widget: "string", default: "Michael"}
+
+  - name: "gun-gear"
+    label: "Gun Gear & Pew Sports"
+    folder: "content/gun-gear"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "Excerpt (short summary for cards)", name: "excerpt", widget: "text", required: true}
+      - {label: "Featured on Homepage?", name: "featured", widget: "boolean", default: false}
+      - {label: "Main Body", name: "body", widget: "markdown", required: true}
+      - {label: "Author", name: "author", widget: "string", default: "Michael"}
+
+  - name: "hot-takes"
+    label: "Hot Takes & Culture"
+    folder: "content/hot-takes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", required: true}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", required: true}
+      - {label: "Excerpt (short summary for cards)", name: "excerpt", widget: "text", required: true}
+      - {label: "Featured on Homepage?", name: "featured", widget: "boolean", default: false}
+      - {label: "Main Body", name: "body", widget: "markdown", required: true}
+      - {label: "Author", name: "author", widget: "string", default: "Michael"}
