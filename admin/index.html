@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pillar & Pew – Content Editor</title>
+
+  <!-- This loads the actual Static CMS editor from a CDN (fast & free) -->
+  <script src="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.js"></script>
+</head>
+<body>
+  <!-- This empty div is where the editor will appear -->
+  <div id="nc-root"></div>
+
+  <!-- This tells Static CMS where to find our configuration file -->
+  <script type="text/javascript">
+    CMS_MANUAL_INIT = true;
+    window.CMS_MANUAL_INIT = true;
+
+    // We’ll add more configuration here in the next step
+  </script>
+</body>
+</html>
