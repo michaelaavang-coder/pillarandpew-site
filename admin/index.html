@@ -14,27 +14,35 @@
 
   <!-- Start the editor and point it to config.yml -->
   <script type="text/javascript">
-    // Tell Static CMS we're controlling the startup
-    window.CMS_MANUAL_INIT = true;
+  // Tell Static CMS we're controlling startup
+  window.CMS_MANUAL_INIT = true;
 
-    // Wait for the page to load, then start the CMS
-    window.addEventListener('load', function() {
-      CMS.init({
-        config: {
-          // Use GitHub as the backend
-          backend: {
-            name: 'github',
-            repo: 'michaelaavang-coder/pillarandpew-site',  // Your exact repo
-            branch: 'main'
-          },
-          // Automatically load config.yml from the same folder
-          load_config_file: true,
-          // Image upload settings (we'll create this folder later if needed)
-          media_folder: 'public/images',
-          public_folder: '/images'
-        }
-      });
+  // Wait for the page AND the Decap CMS script to be fully ready
+  function startCMS() {
+    if (typeof CMS === 'undefined') {
+      console.log("Waiting for CMS to load...");
+      setTimeout(startCMS, 500); // Check again in 0.5 seconds
+      return;
+    }
+
+    console.log("CMS is ready! Starting editor...");
+
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'michaelaavang-coder/pillarandpew-site',
+          branch: 'main'
+        },
+        load_config_file: true,
+        media_folder: 'public/images',
+        public_folder: '/images'
+      }
     });
-  </script>
+  }
+
+  // Start checking once the page loads
+  window.addEventListener('load', startCMS);
+</script>
 </body>
 </html>
