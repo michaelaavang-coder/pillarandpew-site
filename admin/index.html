@@ -5,19 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Pillar & Pew – Content Editor</title>
 
-  <!-- This loads the actual Static CMS editor from a CDN (fast & free) -->
+  <!-- Load Static CMS (Decap CMS) from CDN – fast & free -->
   <script src="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.js"></script>
 </head>
 <body>
   <!-- This empty div is where the editor will appear -->
   <div id="nc-root"></div>
 
-  <!-- This tells Static CMS where to find our configuration file -->
+  <!-- Start Static CMS manually and point it to our config.yml -->
   <script type="text/javascript">
-    CMS_MANUAL_INIT = true;
+    // Tell Static CMS we're controlling the start ourselves
     window.CMS_MANUAL_INIT = true;
 
-    // We’ll add more configuration here in the next step
+    // Wait for the script to load, then start the editor
+    window.addEventListener('load', function() {
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'michaelaavang-coder/pillarandpew-site',  // Your exact repo name
+            branch: 'main'
+          },
+          load_config_file: true,  // Automatically load config.yml from the same folder
+          media_folder: 'public/images',   // Where uploaded images go
+          public_folder: '/images'         // How images appear on the live site
+        }
+      });
+    });
   </script>
 </body>
 </html>
