@@ -9,26 +9,29 @@
   <script src="https://unpkg.com/decap-cms@^3.3.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- This empty div is where the editor will appear -->
+  <!-- This empty div is where the full editor will appear -->
   <div id="nc-root"></div>
 
-  <!-- Start Static CMS manually and point it to our config.yml -->
+  <!-- Start the editor and point it to config.yml -->
   <script type="text/javascript">
-    // Tell Static CMS we're controlling the start ourselves
+    // Tell Static CMS we're controlling the startup
     window.CMS_MANUAL_INIT = true;
 
-    // Wait for the script to load, then start the editor
+    // Wait for the page to load, then start the CMS
     window.addEventListener('load', function() {
       CMS.init({
         config: {
+          // Use GitHub as the backend
           backend: {
             name: 'github',
-            repo: 'michaelaavang-coder/pillarandpew-site',  // Your exact repo name
+            repo: 'michaelaavang-coder/pillarandpew-site',  // Your exact repo
             branch: 'main'
           },
-          load_config_file: true,  // Automatically load config.yml from the same folder
-          media_folder: 'public/images',   // Where uploaded images go
-          public_folder: '/images'         // How images appear on the live site
+          // Automatically load config.yml from the same folder
+          load_config_file: true,
+          // Image upload settings (we'll create this folder later if needed)
+          media_folder: 'public/images',
+          public_folder: '/images'
         }
       });
     });
