@@ -16,7 +16,6 @@
 <body class="font-inter bg-white text-black">
     <!-- Sticky Navigation -->
     <custom-navigation></custom-navigation>
-
     <!-- Hero Section -->
     <section class="relative h-screen bg-black overflow-hidden">
         <div class="absolute inset-0 bg-red-900 opacity-20"></div>
@@ -38,7 +37,6 @@
             <i data-feather="chevron-down" class="text-white animate-bounce w-12 h-12"></i>
         </div>
     </section>
-
     <!-- What is Pillar and Pew -->
     <section class="py-20 px-4 max-w-4xl mx-auto">
         <h2 class="text-4xl font-black uppercase mb-8 text-center">What is <span class="text-red-600">Pillar & Pew</span>?</h2>
@@ -49,7 +47,6 @@
         </p>
         <div class="h-1 bg-gradient-to-r from-black via-red-600 to-black my-16"></div>
     </section>
-
     <!-- Core Pillars -->
     <section class="py-16 bg-gray-100">
         <div class="max-w-6xl mx-auto px-4">
@@ -82,7 +79,6 @@
             </div>
         </div>
     </section>
-
     <!-- How It Works -->
     <section class="py-20 max-w-4xl mx-auto px-4">
         <h2 class="text-4xl font-black uppercase mb-12 text-center">How It <span class="text-red-600">Works</span></h2>
@@ -117,7 +113,6 @@
             </div>
         </div>
     </section>
-
     <!-- Who Can Contribute -->
     <section class="py-20 bg-gray-100">
         <div class="max-w-4xl mx-auto px-4">
@@ -170,40 +165,62 @@
             </div>
         </div>
     </section>
-
     <!-- Featured Articles -->
-    <section class="py-20 bg-gray-100" id="articles">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-black uppercase mb-12 text-center">Featured <span class="text-red-600">Articles</span></h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-white shadow-lg">
-                    <div class="h-48 bg-gray-800"></div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Aquinas on Natural Law in 2026</h3>
-                        <p class="text-gray-600 mb-4">How classical philosophy applies to modern ethical challenges</p>
-                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
-                    </div>
-                </article>
-                <article class="bg-white shadow-lg">
-                    <div class="h-48 bg-gray-700"></div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Why Catholics Should Train with Red Dots</h3>
-                        <p class="text-gray-600 mb-4">The spiritual and practical case for modern optics</p>
-                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
-                    </div>
-                </article>
-                <article class="bg-white shadow-lg">
-                    <div class="h-48 bg-gray-600"></div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold mb-2">Best Budget AR Upgrades – Hot Take</h3>
-                        <p class="text-gray-600 mb-4">Where to spend and where to save on your rifle build</p>
-                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
-                    </div>
-                </article>
-            </div>
+<section class="py-20 bg-gray-100" id="articles">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-black uppercase mb-12 text-center">
+            Featured <span class="text-red-600">Articles</span>
+        </h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Card 1 – Red Dot Training -->
+            <article class="bg-white shadow-lg transition hover:shadow-xl">
+                <div class="h-48 bg-gray-700"></div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900">
+                        Why Catholics Should Train with Red Dots
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        The spiritual and practical case for modern optics
+                    </p>
+                    <a href="#" class="text-red-600 font-bold hover:text-red-800 hover:underline">
+                        Read More →
+                    </a>
+                </div>
+            </article>
+            <!-- Card 2 – Budget AR Upgrades -->
+            <article class="bg-white shadow-lg transition hover:shadow-xl">
+                <div class="h-48 bg-gray-600"></div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900">
+                        Best Budget AR Upgrades – Hot Take
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Where to spend and where to save on your rifle build
+                    </p>
+                    <a href="#" class="text-red-600 font-bold hover:text-red-800 hover:underline">
+                        Read More →
+                    </a>
+                </div>
+            </article>
+            <!-- Card 3 – Aquinas on Natural Law (your real one) -->
+            <article class="bg-white shadow-lg transition hover:shadow-xl">
+                <div class="h-48 bg-gray-800"></div> <!-- placeholder – change to image later -->
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-900">
+                        Aquinas on Natural Law in 2026
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        How classical Thomistic natural law applies to modern ethical challenges, technology, and society in 2026.
+                    </p>
+                    <a href="articles/aquinas-natural-law-2026.html"
+                       class="text-red-600 font-bold hover:text-red-800 hover:underline">
+                        Read More →
+                    </a>
+                </div>
+            </article>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- FAQ -->
     <section class="py-20 max-w-4xl mx-auto px-4">
         <h2 class="text-4xl font-black uppercase mb-12 text-center">Common <span class="text-red-600">Questions</span></h2>
@@ -222,7 +239,6 @@
             </details>
         </div>
     </section>
-
     <!-- Newsletter -->
     <section class="py-20 bg-red-600 text-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
@@ -234,10 +250,8 @@
             </form>
         </div>
     </section>
-
     <!-- Footer -->
     <custom-footer></custom-footer>
-
     <!-- Components -->
     <script src="components/navigation.js"></script>
     <script src="components/footer.js"></script>
@@ -246,5 +260,6 @@
 </body>
 
 </html>
+
 
 
