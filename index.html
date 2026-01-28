@@ -66,19 +66,19 @@
             <h2 class="text-4xl font-black uppercase mb-12 text-center">Our <span class="text-red-600">Core Pillars</span></h2>
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
-                    <i data-feather="book" class="w-12 h-12 mb-4 text-red-600"></i>
+                    <i data-feather="book-open" class="w-12 h-12 mb-4 text-red-600"></i>
                     <h3 class="text-2xl font-bold mb-3">Philosophy & Reason</h3>
                     <p class="mb-4">Deep dives into classical thought and modern applications</p>
                     <a href="#articles" class="text-red-600 font-bold hover:underline">Explore →</a>
                 </div>
                 <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
-                    <i data-feather="cross" class="w-12 h-12 mb-4 text-red-600"></i>
+                    <i data-feather="heart" class="w-12 h-12 mb-4 text-red-600"></i>
                     <h3 class="text-2xl font-bold mb-3">Catholic Truth</h3>
                     <p class="mb-4">Unapologetic defense of the Faith</p>
                     <a href="#articles" class="text-red-600 font-bold hover:underline">Explore →</a>
                 </div>
                 <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
-                    <i data-feather="target" class="w-12 h-12 mb-4 text-red-600"></i>
+                    <i data-feather="crosshair" class="w-12 h-12 mb-4 text-red-600"></i>
                     <h3 class="text-2xl font-bold mb-3">Guns, Gear, Shooting Sports</h3>
                     <p class="mb-4">Practical takes on firearms and tactical equipment</p>
                     <a href="#articles" class="text-red-600 font-bold hover:underline">Explore →</a>
@@ -138,17 +138,17 @@
             </p>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center">
-                    <i data-feather="user" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
+                    <i data-feather="book-open" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
                     <h3 class="font-bold mb-2">Philosophers</h3>
                     <p class="text-sm">Deep thinkers exploring timeless truths</p>
                 </div>
                 <div class="text-center">
-                    <i data-feather="cross" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
+                    <i data-feather="heart" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
                     <h3 class="font-bold mb-2">Educated Catholics</h3>
                     <p class="text-sm">Those who stand firm in the Faith</p>
                 </div>
                 <div class="text-center">
-                    <i data-feather="target" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
+                    <i data-feather="crosshair" class="w-10 h-10 mx-auto mb-4 text-red-600"></i>
                     <h3 class="font-bold mb-2">Shooting Enthusiasts</h3>
                     <p class="text-sm">Practical knowledge from the range</p>
                 </div>
@@ -275,10 +275,27 @@
     <script src="footer.js"></script>
     <script src="script.js"></script>
 
-    <!-- Feather Icons initialization -->
+    <!-- Feather Icons initialization - Multiple attempts to ensure icons load -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        // Initialize Feather icons immediately
+        if (typeof feather !== 'undefined') {
             feather.replace();
+        }
+        
+        // Also initialize on DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+        
+        // Final attempt after a short delay to catch any late-loading elements
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 100);
         });
     </script>
 
