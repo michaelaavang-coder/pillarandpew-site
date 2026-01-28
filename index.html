@@ -6,8 +6,8 @@
     <title>Pillar & Pew | Faith, Reason & Readiness</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Feather Icons (single reliable load) -->
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <!-- Feather Icons – single reliable source -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
     </style>
@@ -169,7 +169,7 @@
         </div>
     </section>
 
-    <!-- Featured Articles – FIXED & CLEANED -->
+    <!-- Featured Articles -->
     <section class="py-20 bg-gray-100" id="articles">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-4xl font-black uppercase mb-12 text-center">Featured <span class="text-red-600">Articles</span></h2>
@@ -249,9 +249,9 @@
     <script src="components/footer.js"></script>
     <script src="script.js"></script>
 
-    <!-- Feather Icons – reliable replacement after page load -->
+    <!-- Feather Icons – single load + safe replacement after page is ready -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function () {
             feather.replace();
         });
     </script>
