@@ -6,13 +6,14 @@
     <title>Pillar & Pew | Faith, Reason & Readiness</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Feather Icons (single reliable load) -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
     </style>
 </head>
 <body class="font-inter bg-white text-black">
+
     <!-- Sticky Navigation -->
     <custom-navigation></custom-navigation>
 
@@ -168,13 +169,13 @@
         </div>
     </section>
 
-    <!-- Featured Articles -->
+    <!-- Featured Articles – FIXED & CLEANED -->
     <section class="py-20 bg-gray-100" id="articles">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-4xl font-black uppercase mb-12 text-center">Featured <span class="text-red-600">Articles</span></h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-white shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800"
+                <article class="bg-white shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                          alt="Ancient philosophy book and statue representing natural law and Aquinas"
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -183,8 +184,9 @@
                         <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
                     </div>
                 </article>
-                <article class="bg-white shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1589829545856-d10d5d5a7d8f?auto=format&fit=crop&q=80&w=800"
+
+                <article class="bg-white shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1589829545856-d10d5d5a7d8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                          alt="Stained glass window with crucifix symbolizing Catholic faith and tradition"
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -193,8 +195,9 @@
                         <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
                     </div>
                 </article>
-                <article class="bg-white shadow-lg">
-                    <img src="https://images.unsplash.com/photo-1605289918732-5d9d2a4e9d2f?auto=format&fit=crop&q=80&w=800"
+
+                <article class="bg-white shadow-lg overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1605289918732-5d9d2a4e9d2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                          alt="Modern rifle with attachments on a tactical setup representing gun gear and shooting sports"
                          class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -229,4 +232,29 @@
     <!-- Newsletter -->
     <section class="py-20 bg-red-600 text-white">
         <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-4xl font-black uppercase mb-4">
+            <h2 class="text-4xl font-black uppercase mb-4">Stay Updated</h2>
+            <p class="text-xl mb-8">Get new articles straight to your inbox</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 text-black">
+                <button type="submit" class="bg-black text-white px-8 py-3 font-bold uppercase tracking-wider">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Scripts -->
+    <script src="components/navigation.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Feather Icons – reliable replacement after page load -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            feather.replace();
+        });
+    </script>
+
+</body>
+</html>
