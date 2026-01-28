@@ -1,6 +1,22 @@
+/* 
+ * Pillar & Pew - Main Stylesheet
+ * Last Updated: January 28, 2025 - Version 2 (Icon & Image Fixes)
+ */
+
 /* Custom scroll behavior */
 html {
     scroll-behavior: smooth;
+}
+
+/* Feather Icons styling - ensure proper display */
+i[data-feather] {
+    display: inline-block;
+    vertical-align: middle;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
 }
 
 /* Custom animations */
@@ -67,6 +83,34 @@ details[open] summary {
 /* Loading state for images */
 img {
     background-color: #f3f4f6;
+}
+
+/* Article card images specific styling */
+article img {
+    min-height: 192px; /* Ensures h-48 equivalent */
+    background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+}
+
+/* Image loading animation */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+article img[src*="unsplash"] {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(
+        90deg,
+        #f3f4f6 0%,
+        #e5e7eb 20%,
+        #f3f4f6 40%,
+        #f3f4f6 100%
+    );
+    background-size: 1000px 100%;
 }
 
 /* Custom scrollbar (optional, for modern browsers) */
