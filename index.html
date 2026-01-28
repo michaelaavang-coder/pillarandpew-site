@@ -4,9 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pillar & Pew | Faith, Reason & Readiness</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bold writing on philosophy, Catholic truth, firearms, and culture. Serious ideas without the academic theater.">
+    <meta name="keywords" content="philosophy, Catholic apologetics, firearms, shooting sports, natural law, conservative commentary">
+    <meta property="og:title" content="Pillar & Pew | Faith, Reason & Readiness">
+    <meta property="og:description" content="Bold writing on philosophy, Catholic truth, firearms, and culture">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yourdomain.com/misty-forest.avif">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Feather Icons – single reliable source -->
+    <!-- Feather Icons -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
@@ -40,7 +52,7 @@
     </section>
 
     <!-- What is Pillar and Pew -->
-    <section class="py-20 px-4 max-w-4xl mx-auto">
+    <section class="py-20 px-4 max-w-4xl mx-auto" id="about">
         <h2 class="text-4xl font-black uppercase mb-8 text-center">What is <span class="text-red-600">Pillar & Pew</span>?</h2>
         <p class="text-xl text-center mb-12">
             Serious ideas without the academic theater. A hub for bold, principled writing that stands firm like pillars: deep dives into philosophy, distilled Catholic truth, and entertaining/practical takes on firearms, gear, and shooting sports.
@@ -57,25 +69,25 @@
                     <i data-feather="book" class="w-12 h-12 mb-4 text-red-600"></i>
                     <h3 class="text-2xl font-bold mb-3">Philosophy & Reason</h3>
                     <p class="mb-4">Deep dives into classical thought and modern applications</p>
-                    <a href="#" class="text-red-600 font-bold hover:underline">Explore →</a>
+                    <a href="#articles" class="text-red-600 font-bold hover:underline">Explore →</a>
                 </div>
                 <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
                     <i data-feather="cross" class="w-12 h-12 mb-4 text-red-600"></i>
                     <h3 class="text-2xl font-bold mb-3">Catholic Truth</h3>
                     <p class="mb-4">Unapologetic defense of the Faith</p>
-                    <a href="#" class="text-red-600 font-bold hover:underline">Explore →</a>
+                    <a href="#articles" class="text-red-600 font-bold hover:underline">Explore →</a>
                 </div>
                 <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
                     <i data-feather="target" class="w-12 h-12 mb-4 text-red-600"></i>
                     <h3 class="text-2xl font-bold mb-3">Guns, Gear, Shooting Sports</h3>
                     <p class="mb-4">Practical takes on firearms and tactical equipment</p>
-                    <a href="#" class="text-red-600 font-bold hover:underline">Explore →</a>
+                    <a href="#articles" class="text-red-600 font-bold hover:underline">Explore →</a>
                 </div>
                 <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
                     <i data-feather="zap" class="w-12 h-12 mb-4 text-red-600"></i>
                     <h3 class="text-2xl font-bold mb-3">Hot Takes & Culture</h3>
                     <p class="mb-4">Bold commentary on current issues</p>
-                    <a href="#" class="text-red-600 font-bold hover:underline">Explore →</a>
+                    <a href="#articles" class="text-red-600 font-bold hover:underline">Explore →</a>
                 </div>
             </div>
         </div>
@@ -152,19 +164,19 @@
                 <div class="text-5xl font-bold mb-4 text-red-600">1</div>
                 <h3 class="text-xl font-bold mb-2">Read the Guidelines</h3>
                 <p class="mb-4">Understand our submission rules and tone expectations</p>
-                <a href="#" class="text-red-600 font-bold hover:underline">View Guidelines →</a>
+                <a href="#contact" class="text-red-600 font-bold hover:underline">View Guidelines →</a>
             </div>
             <div class="border-2 border-black p-6">
                 <div class="text-5xl font-bold mb-4 text-red-600">2</div>
                 <h3 class="text-xl font-bold mb-2">Prepare Your Piece</h3>
                 <p class="mb-4">Structure your arguments and research thoroughly</p>
-                <a href="#" class="text-red-600 font-bold hover:underline">Writing Tips →</a>
+                <a href="#contact" class="text-red-600 font-bold hover:underline">Writing Tips →</a>
             </div>
             <div class="border-2 border-black p-6">
                 <div class="text-5xl font-bold mb-4 text-red-600">3</div>
                 <h3 class="text-xl font-bold mb-2">Submit & Publish</h3>
                 <p class="mb-4">Send us your work for review and publication</p>
-                <a href="#" class="text-red-600 font-bold hover:underline">Submit Now →</a>
+                <a href="#contact" class="text-red-600 font-bold hover:underline">Submit Now →</a>
             </div>
         </div>
     </section>
@@ -174,36 +186,39 @@
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-4xl font-black uppercase mb-12 text-center">Featured <span class="text-red-600">Articles</span></h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <article class="bg-white shadow-lg overflow-hidden">
+                <article class="bg-white shadow-lg overflow-hidden transition-transform hover:transform hover:-translate-y-1">
                     <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                          alt="Ancient philosophy book and statue representing natural law and Aquinas"
-                         class="w-full h-48 object-cover">
+                         class="w-full h-48 object-cover"
+                         loading="lazy">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Aquinas on Natural Law in 2026</h3>
                         <p class="text-gray-600 mb-4">How classical philosophy applies to modern ethical challenges</p>
-                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
+                        <a href="articles/aquinas-natural-law-2026.html" class="text-red-600 font-bold hover:underline">Read More →</a>
                     </div>
                 </article>
 
-                <article class="bg-white shadow-lg overflow-hidden">
+                <article class="bg-white shadow-lg overflow-hidden transition-transform hover:transform hover:-translate-y-1">
                     <img src="https://images.unsplash.com/photo-1589829545856-d10d5d5a7d8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                          alt="Stained glass window with crucifix symbolizing Catholic faith and tradition"
-                         class="w-full h-48 object-cover">
+                         class="w-full h-48 object-cover"
+                         loading="lazy">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Why Catholics Should Train with Red Dots</h3>
                         <p class="text-gray-600 mb-4">The spiritual and practical case for modern optics</p>
-                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
+                        <a href="#" class="text-red-600 font-bold hover:underline">Coming Soon →</a>
                     </div>
                 </article>
 
-                <article class="bg-white shadow-lg overflow-hidden">
+                <article class="bg-white shadow-lg overflow-hidden transition-transform hover:transform hover:-translate-y-1">
                     <img src="https://images.unsplash.com/photo-1605289918732-5d9d2a4e9d2f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                          alt="Modern rifle with attachments on a tactical setup representing gun gear and shooting sports"
-                         class="w-full h-48 object-cover">
+                         class="w-full h-48 object-cover"
+                         loading="lazy">
                     <div class="p-6">
                         <h3 class="text-2xl font-bold mb-2">Best Budget AR Upgrades – Hot Take</h3>
                         <p class="text-gray-600 mb-4">Where to spend and where to save on your rifle build</p>
-                        <a href="#" class="text-red-600 font-bold hover:underline">Read More →</a>
+                        <a href="#" class="text-red-600 font-bold hover:underline">Coming Soon →</a>
                     </div>
                 </article>
             </div>
@@ -234,22 +249,33 @@
         <div class="max-w-4xl mx-auto px-4 text-center">
             <h2 class="text-4xl font-black uppercase mb-4">Stay Updated</h2>
             <p class="text-xl mb-8">Get new articles straight to your inbox</p>
-            <form class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-                <input type="email" placeholder="Your email" class="flex-grow px-4 py-3 text-black">
-                <button type="submit" class="bg-black text-white px-8 py-3 font-bold uppercase tracking-wider">Subscribe</button>
+            <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+                <input type="email" id="newsletter-email" placeholder="Your email" required class="flex-grow px-4 py-3 text-black">
+                <button type="submit" class="bg-black text-white px-8 py-3 font-bold uppercase tracking-wider hover:bg-gray-900 transition">Subscribe</button>
             </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 max-w-4xl mx-auto px-4" id="contact">
+        <h2 class="text-4xl font-black uppercase mb-8 text-center">Get in <span class="text-red-600">Touch</span></h2>
+        <div class="text-center">
+            <p class="text-xl mb-6">Have questions or want to submit your work?</p>
+            <a href="mailto:hello@pillarandpew.com" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-none font-bold uppercase tracking-wider transition">
+                Email Us
+            </a>
         </div>
     </section>
 
     <!-- Footer -->
     <custom-footer></custom-footer>
 
-    <!-- Scripts -->
-    <script src="components/navigation.js"></script>
-    <script src="components/footer.js"></script>
+    <!-- Scripts - CORRECTED PATHS -->
+    <script src="navigation.js"></script>
+    <script src="footer.js"></script>
     <script src="script.js"></script>
 
-    <!-- Feather Icons – single load + safe replacement after page is ready -->
+    <!-- Feather Icons initialization -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             feather.replace();

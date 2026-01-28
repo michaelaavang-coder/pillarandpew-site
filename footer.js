@@ -1,10 +1,45 @@
 // footer.js
 class CustomFooter extends HTMLElement {
     connectedCallback() {
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.innerHTML = `
+        this.innerHTML = `
+            <footer class="footer-wrapper">
+                <div class="footer-container">
+                    <div class="footer-brand-section">
+                        <div class="footer-brand">PILLAR<span class="amp">&</span>PEW</div>
+                        <p class="footer-text">
+                            Faith, Reason, and Readiness.  
+                            Bold writing on philosophy, Catholic truth, firearms, and culture — without apology.
+                        </p>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#articles">Articles</a></li>
+                            <li><a href="#submit">Submit Your Work</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4>Connect</h4>
+                        <ul>
+                            <li><a href="#newsletter">Newsletter</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">X / Twitter</a></li>
+                            <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+                            <li><a href="mailto:hello@pillarandpew.com">Email Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="copyright">
+                    © ${new Date().getFullYear()} Pillar & Pew. All rights reserved.
+                </div>
+            </footer>
+            
             <style>
-                footer {
+                .footer-wrapper {
                     background-color: #000;
                     color: white;
                     padding: 3rem 2rem 2rem;
@@ -28,7 +63,7 @@ class CustomFooter extends HTMLElement {
                     font-size: 1.8rem;
                     margin-bottom: 1rem;
                 }
-                .footer-brand span {
+                .footer-brand .amp {
                     color: #c8102e;
                 }
                 .footer-text {
@@ -69,42 +104,6 @@ class CustomFooter extends HTMLElement {
                     opacity: 0.7;
                 }
             </style>
-
-            <footer>
-                <div class="footer-container">
-                    <div class="footer-brand-section">
-                        <div class="footer-brand">PILLAR<span>&</span>PEW</div>
-                        <p class="footer-text">
-                            Faith, Reason, and Readiness.  
-                            Bold writing on philosophy, Catholic truth, firearms, and culture — without apology.
-                        </p>
-                    </div>
-
-                    <div class="footer-links">
-                        <h4>Quick Links</h4>
-                        <ul>
-                            <li><a href="#articles">Articles</a></li>
-                            <li><a href="#submit">Submit Your Work</a></li>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-links">
-                        <h4>Connect</h4>
-                        <ul>
-                            <li><a href="#">Newsletter</a></li>
-                            <li><a href="#">X / Twitter</a></li>
-                            <li><a href="#">YouTube</a></li>
-                            <li><a href="mailto:hello@pillarandpew.com">Email Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="copyright">
-                    © ${new Date().getFullYear()} Pillar & Pew. All rights reserved.
-                </div>
-            </footer>
         `;
     }
 }

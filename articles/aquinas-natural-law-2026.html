@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aquinas on Natural Law in 2026 | Pillar & Pew</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="How Thomas Aquinas's teaching on natural law provides enduring categories for understanding nation, citizenship, and border control in 2026.">
+    <meta name="keywords" content="Aquinas, natural law, philosophy, Catholic, immigration, citizenship, borders">
+    <meta property="og:title" content="Aquinas on Natural Law in 2026 | Pillar & Pew">
+    <meta property="og:description" content="Classical philosophy meets modern political challenges">
+    <meta property="og:type" content="article">
+    
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Feather Icons - Single source -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap');
     </style>
@@ -18,7 +26,7 @@
     <custom-navigation></custom-navigation>
 
     <main class="py-16 px-4 md:py-20 max-w-4xl mx-auto">
-        <!-- Main title – kept prominent but balanced -->
+        <!-- Main title -->
         <h1 class="text-4xl md:text-5xl font-black uppercase mb-10 text-center tracking-tight text-gray-950 leading-tight">
             Aquinas on Natural Law in 2026
         </h1>
@@ -39,7 +47,7 @@
             <h2 class="text-2xl md:text-3xl font-extrabold uppercase mt-12 mb-6 tracking-tight text-gray-950 border-b-4 border-red-700 pb-3">
                 Citizenship
             </h2>
-            <p>Citizenship, in this light, is participation in that ordered community. Aquinas would view it as more than legal status: it involves sharing in the rational pursuit of the common good with rights and duties flowing from shared national identity. The fierce 2025 controversies over birthright citizenship—executive attempts to limit or reinterpret it, court challenges, and public battles over who "belongs"—exposed deep confusion about this. Natural law suggests citizenship should reflect the natural inclination toward inclusion in just societies, but only in so far as that inclusion contributes to the safety, trust, and amity of that nation’s citizens. For the curious reader new to these reflections, natural law acts as a quiet arbiter: Does a change in citizenship rules foster stable, reciprocal participation in the common good, or does it dilute and confuse national identity in ways that undermine mutual trust and foster factional strife? The year's polarized coverage showed how easily this category fractures without a shared rational measure.</p>
+            <p>Citizenship, in this light, is participation in that ordered community. Aquinas would view it as more than legal status: it involves sharing in the rational pursuit of the common good with rights and duties flowing from shared national identity. The fierce 2025 controversies over birthright citizenship—executive attempts to limit or reinterpret it, court challenges, and public battles over who "belongs"—exposed deep confusion about this. Natural law suggests citizenship should reflect the natural inclination toward inclusion in just societies, but only in so far as that inclusion contributes to the safety, trust, and amity of that nation's citizens. For the curious reader new to these reflections, natural law acts as a quiet arbiter: Does a change in citizenship rules foster stable, reciprocal participation in the common good, or does it dilute and confuse national identity in ways that undermine mutual trust and foster factional strife? The year's polarized coverage showed how easily this category fractures without a shared rational measure.</p>
 
             <h2 class="text-2xl md:text-3xl font-extrabold uppercase mt-12 mb-6 tracking-tight text-gray-950 border-b-4 border-red-700 pb-3">
                 Border Control: Preservation and Hospitality
@@ -63,10 +71,16 @@
     <!-- Footer -->
     <custom-footer></custom-footer>
 
-    <!-- Scripts -->
-    <script src="../components/navigation.js"></script>
-    <script src="../components/footer.js"></script>
+    <!-- Scripts - CORRECTED PATHS -->
+    <script src="../navigation.js"></script>
+    <script src="../footer.js"></script>
     <script src="../script.js"></script>
-    <script>feather.replace();</script>
+    
+    <!-- Feather Icons initialization -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            feather.replace();
+        });
+    </script>
 </body>
 </html>

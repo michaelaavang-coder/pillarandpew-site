@@ -1,9 +1,31 @@
 class CustomNavigation extends HTMLElement {
     connectedCallback() {
-        this.attachShadow({ mode: 'open' });
-        this.shadowRoot.innerHTML = `
+        this.innerHTML = `
+            <nav class="nav-wrapper">
+                <div class="nav-container">
+                    <a href="/" class="logo">PILLAR<span class="amp">&</span>PEW</a>
+                    <div class="nav-links">
+                        <a href="/">Home</a>
+                        <a href="#about">About</a>
+                        <a href="#articles">Articles</a>
+                        <a href="#submit">Submit</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    <button class="mobile-menu-button" id="mobile-menu-btn" aria-label="Toggle mobile menu">
+                        <i data-feather="menu"></i>
+                    </button>
+                </div>
+                <div class="mobile-menu hidden" id="mobile-menu">
+                    <a href="/">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#articles">Articles</a>
+                    <a href="#submit">Submit</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+            
             <style>
-                nav {
+                .nav-wrapper {
                     background-color: #000;
                     color: white;
                     position: fixed;
@@ -28,7 +50,7 @@ class CustomNavigation extends HTMLElement {
                     color: white;
                     text-decoration: none;
                 }
-                .logo span {
+                .logo .amp {
                     color: #c8102e;
                 }
                 .nav-links {
@@ -54,23 +76,36 @@ class CustomNavigation extends HTMLElement {
                     color: white;
                     font-size: 1.5rem;
                     cursor: pointer;
+                    padding: 0.5rem;
                 }
                 .mobile-menu {
                     display: none;
                     flex-direction: column;
                     background: #000;
-                    padding: 1rem;
-                    position: absolute;
-                    width: 100%;
-                    left: 0;
-                    top: 100%;
+                    padding: 1rem 2rem;
+                    border-top: 1px solid #333;
+                }
+                .mobile-menu.hidden {
+                    display: none;
                 }
                 .mobile-menu a {
                     color: white;
                     text-decoration: none;
-                    padding: 0.5rem 0;
+                    padding: 0.75rem 0;
                     border-bottom: 1px solid #333;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                    letter-spacing: 1px;
+                    transition: color 0.3s;
                 }
+                .mobile-menu a:hover {
+                    color: #c8102e;
+                }
+                .mobile-menu a:last-child {
+                    border-bottom: none;
+                }
+                
                 @media (max-width: 768px) {
                     .nav-links {
                         display: none;
@@ -78,34 +113,50 @@ class CustomNavigation extends HTMLElement {
                     .mobile-menu-button {
                         display: block;
                     }
-                    .mobile-menu {
-                        display: flex;
-                    }
+                }
+                
+                /* Add padding to body to account for fixed nav */
+                body {
+                    padding-top: 70px;
                 }
             </style>
-            <nav>
-                <div class="nav-container">
-                    <a href="#" class="logo">PILLAR<span>&</span>PEW</a>
-                    <div class="nav-links">
-                        <a href="#">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#articles">Articles</a>
-                        <a href="#submit">Submit</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                    <button class="mobile-menu-button">
-                        <i data-feather="menu"></i>
-                    </button>
-                    <div class="mobile-menu hidden">
-                        <a href="#">Home</a>
-                        <a href="#about">About</a>
-                        <a href="#articles">Articles</a>
-                        <a href="#submit">Submit</a>
-                        <a href="#contact">Contact</a>
-                    </div>
-                </div>
-            </nav>
         `;
+        
+        // Mobile menu toggle functionality
+        const mobileMenuBtn = this.querySelector('#mobile-menu-btn');
+        const mobileMenu = this.querySelector('#mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                
+                // Update icon
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    const isOpen = !mobileMenu.classList.contains('hidden');
+                    icon.setAttribute('data-feather', isOpen ? 'x' : 'menu');
+                    if (window.feather) {
+                        feather.replace();
+                    }
+                }
+            });
+            
+            // Close menu when clicking a link
+            const menuLinks = mobileMenu.querySelectorAll('a');
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        icon.setAttribute('data-feather', 'menu');
+                        if (window.feather) {
+                            feather.replace();
+                        }
+                    }
+                });
+            });
+        }
     }
 }
+
 customElements.define('custom-navigation', CustomNavigation);
