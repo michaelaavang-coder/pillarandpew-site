@@ -63,7 +63,7 @@
     <!-- Core Pillars -->
     <section class="py-16 bg-gray-100">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-black uppercase mb-12 text-center">Our <span class="text-red-600">Core Pillars</span></h2>
+            <h2 class="text-4xl font-black uppercase mb-12 text-center">The <span class="text-red-600">Core Pillars</span></h2>
             <div class="grid md:grid-cols-4 gap-8">
                 <div class="bg-white p-8 shadow-lg border-t-4 border-red-600">
                     <i data-feather="book-open" class="w-12 h-12 mb-4 text-red-600"></i>
@@ -133,8 +133,8 @@
         <div class="max-w-4xl mx-auto px-4">
             <h2 class="text-4xl font-black uppercase mb-8 text-center">Who Can <span class="text-red-600">Contribute</span>?</h2>
             <p class="text-xl text-center mb-12">
-                We welcome serious writers from all backgrounds and skill levels who value truth, reason,
-                and principled discourse.
+                Serious writers from all backgrounds and skill levels who value truth, reason,
+                and principled discourse are welcome to contribute.
             </p>
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="text-center">
@@ -236,15 +236,15 @@
         <h2 class="text-4xl font-black uppercase mb-12 text-center">Common <span class="text-red-600">Questions</span></h2>
         <div class="space-y-4">
             <details class="border-b border-gray-300 pb-4">
-                <summary class="font-bold text-lg cursor-pointer">What topics do you accept?</summary>
-                <p class="mt-2">We publish content on philosophy, Catholic apologetics, firearms, gear reviews, and cultural commentary that aligns with our principles.</p>
+                <summary class="font-bold text-lg cursor-pointer">What topics are accepted?</summary>
+                <p class="mt-2">Pillar & Pew publishes content on philosophy, Catholic apologetics, firearms, gear reviews, and cultural commentary that aligns with these principles.</p>
             </details>
             <details class="border-b border-gray-300 pb-4">
-                <summary class="font-bold text-lg cursor-pointer">What's your comment policy?</summary>
-                <p class="mt-2">We encourage vigorous but charitable discussion. Personal attacks will be removed.</p>
+                <summary class="font-bold text-lg cursor-pointer">What's the comment policy?</summary>
+                <p class="mt-2">Vigorous but charitable discussion is encouraged. Personal attacks will be removed.</p>
             </details>
             <details class="border-b border-gray-300 pb-4">
-                <summary class="font-bold text-lg cursor-pointer">How often do you publish?</summary>
+                <summary class="font-bold text-lg cursor-pointer">How often is content published?</summary>
                 <p class="mt-2">New articles are published weekly, with occasional special editions.</p>
             </details>
         </div>
@@ -298,4 +298,12 @@
         // Final attempt after a short delay to catch any late-loading elements
         window.addEventListener('load', function() {
             setTimeout(function() {
-                if (ty
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>
