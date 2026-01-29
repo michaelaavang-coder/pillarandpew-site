@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquinas on Natural Law in 2026 | Pillar & Pew</title>
+    
+    <meta name="description" content="How classical philosophy applies to modern ethical challenges">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
+        
+        /* Comment System Styles */
+        .comment-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .comment {
+            border-left: 4px solid #c8102e;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background-color: #f9fafb;
+            transition: background-color 0.2s;
+        }
+        
+        .comment:hover {
+            background-color: #f3f4f6;
+        }
+        
+        .comment-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+            gap: 0.75rem;
+        }
+        
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c8102e, #a00d26);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.125rem;
+        }
+        
+        .comment-author {
+            font-weight: bold;
+            color: #111827;
+        }
+        
+        .comment-time {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+        
+        .comment-body {
+            color: #374151;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+        
+        .comment-actions {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+        }
+        
+        .comment-action-btn {
+            color: #6b7280;
+            cursor: pointer;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .comment-action-btn:hover {
+            color: #c8102e;
+        }
+        
+        .comment-form {
+            background-color: #fff;
+            border: 2px solid #e5e7eb;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .comment-form.focused {
+            border-color: #c8102e;
+        }
+        
+        .comment-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            font-size: 1rem;
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+        
+        .comment-input:focus {
+            outline: none;
+            border-color: #c8102e;
+        }
+        
+        .comment-meta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .comment-meta input {
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            font-size: 0.875rem;
+        }
+        
+        .comment-meta input:focus {
+            outline: none;
+            border-color: #c8102e;
+        }
+        
+        .comment-submit {
+            margin-top: 1rem;
+            background-color: #c8102e;
+            color: white;
+            padding: 0.875rem 2rem;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            letter-spacing: 0.05em;
+        }
+        
+        .comment-submit:hover {
+            background-color: #a00d26;
+        }
+        
+        .comment-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .privacy-note {
+            font-size: 0.75rem;
+            color: #6b7280;
+            margin-top: 1rem;
+            font-style: italic;
+        }
+        
+        .comment-count {
+            color: #6b7280;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        
+        .no-comments {
+            text-align: center;
+            padding: 3rem;
+            color: #6b7280;
+            border: 2px dashed #e5e7eb;
+        }
+        
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #c8102e;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .success-message {
+            background-color: #10b981;
+            color: white;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+
+    <!-- Sticky Navigation -->
+    <custom-navigation></custom-navigation>
+
+    <!-- Article Header -->
+    <article class="py-12 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- Article Meta -->
+            <div class="mb-6">
+                <span class="text-red-600 font-bold uppercase text-sm">Philosophy & Reason</span>
+            </div>
+            
+            <!-- Article Title -->
+            <h1 class="text-4xl md:text-5xl font-black mb-6">
+                Aquinas on Natural Law in 2026
+            </h1>
+            
+            <!-- Article Subtitle -->
+            <p class="text-xl text-gray-600 mb-8">
+                How classical philosophy applies to modern ethical challenges
+            </p>
+            
+            <!-- Article Info -->
+            <div class="flex items-center text-gray-600 text-sm mb-12 pb-8 border-b-2 border-gray-200">
+                <span>Published January 28, 2026</span>
+                <span class="mx-3">•</span>
+                <span>8 min read</span>
+            </div>
+            
+            <!-- Article Content -->
+            <div class="prose prose-lg max-w-none mb-16">
+                <p class="text-xl leading-relaxed mb-6">
+                    Thomas Aquinas wrote about natural law in the 13th century, but his insights remain 
+                    remarkably relevant today. As we grapple with questions about artificial intelligence, 
+                    genetic engineering, and digital ethics, Aquinas's framework offers a solid foundation 
+                    for moral reasoning.
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    Natural law theory posits that certain principles of right and wrong are inherent in 
+                    human nature and can be discovered through reason. Aquinas argued that these principles 
+                    are not merely social constructs but reflect the structure of reality itself.
+                </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">The First Principle</h2>
+                
+                <p class="leading-relaxed mb-6">
+                    According to Aquinas, the first and most fundamental principle of natural law is simple: 
+                    good is to be done and pursued, and evil is to be avoided. This might seem obvious, even 
+                    tautological, but it serves as the foundation for more specific moral principles.
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    From this first principle, Aquinas derives secondary principles based on natural human 
+                    inclinations: self-preservation, procreation and education of offspring, knowledge of truth, 
+                    and living in society. These aren't arbitrary rules but reflect what it means to flourish 
+                    as human beings.
+                </p>
+                
+                <h2 class="text-2xl font-bold mt-8 mb-4">Modern Applications</h2>
+                
+                <p class="leading-relaxed mb-6">
+                    Consider the ethics of AI development. A natural law approach asks: What does this technology 
+                    do to human flourishing? Does it enhance our capacity for truth-seeking, or does it undermine 
+                    it? Does it strengthen social bonds, or fragment them?
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    These aren't questions about utility maximization or social consensus. They're questions about 
+                    what we are and what we're for. Natural law provides a framework for asking these deeper questions 
+                    that consequentialist and deontological approaches often miss.
+                </p>
+                
+                <p class="leading-relaxed mb-6">
+                    The beauty of Aquinas's approach is that it's both rigorous and accessible. You don't need to be 
+                    a theologian to grasp the basics, and yet the framework is sophisticated enough to handle complex 
+                    modern dilemmas.
+                </p>
+                
+                <p class="text-xl leading-relaxed mb-6 font-semibold">
+                    In an age of moral relativism and ethical confusion, perhaps it's time to revisit the wisdom 
+                    of the past. Not to retreat from modernity, but to engage it with clarity and confidence.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <!-- Comment Section -->
+    <section class="py-12 px-4 bg-gray-50">
+        <div class="comment-section">
+            <h2 class="text-3xl font-black uppercase mb-8">Comments</h2>
+            
+            <!-- Success Message (hidden by default) -->
+            <div id="successMessage" class="success-message" style="display: none;">
+                ✓ Your comment has been posted successfully!
+            </div>
+            
+            <!-- Comment Form -->
+            <div class="comment-form" id="commentForm">
+                <h3 class="text-xl font-bold mb-4">Leave a Comment</h3>
+                
+                <form id="newCommentForm">
+                    <textarea 
+                        id="commentText" 
+                        class="comment-input" 
+                        placeholder="Share your thoughts..." 
+                        required
+                    ></textarea>
+                    
+                    <div class="comment-meta">
+                        <input 
+                            type="text" 
+                            id="commentName" 
+                            placeholder="Display Name *" 
+                            required
+                        >
+                        <input 
+                            type="email" 
+                            id="commentEmail" 
+                            placeholder="Email (optional, never shown)"
+                        >
+                    </div>
+                    
+                    <button type="submit" class="comment-submit" id="submitComment">
+                        Post Comment
+                    </button>
+                    
+                    <p class="privacy-note">
+                        Your email will never be displayed publicly. You can use a pseudonym for your display name. 
+                        Comments are moderated and will appear after approval.
+                    </p>
+                </form>
+            </div>
+            
+            <!-- Comment Count -->
+            <div class="comment-count" id="commentCount">
+                3 Comments
+            </div>
+            
+            <!-- Comments List -->
+            <div id="commentsList">
+                <!-- Sample Comment 1 -->
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-avatar">JM</div>
+                        <div>
+                            <div class="comment-author">John Maritain</div>
+                            <div class="comment-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        Excellent piece. The application to AI ethics is particularly insightful. I'd add that 
+                        Aquinas's distinction between speculative and practical reason is also relevant here - 
+                        we need both to understand what AI is and what we ought to do with it.
+                    </div>
+                    <div class="comment-actions">
+                        <span class="comment-action-btn">
+                            <i data-feather="thumbs-up" class="w-4 h-4"></i> Helpful (5)
+                        </span>
+                        <span class="comment-action-btn">
+                            <i data-feather="message-circle" class="w-4 h-4"></i> Reply
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Sample Comment 2 -->
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-avatar">TC</div>
+                        <div>
+                            <div class="comment-author">TradCatholic47</div>
+                            <div class="comment-time">5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        This is why I love this site. Actual philosophy applied to real problems, not just 
+                        academic posturing. The natural law tradition has answers that utilitarianism and 
+                        Kantian ethics simply can't provide.
+                    </div>
+                    <div class="comment-actions">
+                        <span class="comment-action-btn">
+                            <i data-feather="thumbs-up" class="w-4 h-4"></i> Helpful (12)
+                        </span>
+                        <span class="comment-action-btn">
+                            <i data-feather="message-circle" class="w-4 h-4"></i> Reply
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Sample Comment 3 -->
+                <div class="comment">
+                    <div class="comment-header">
+                        <div class="comment-avatar">SK</div>
+                        <div>
+                            <div class="comment-author">Sarah K</div>
+                            <div class="comment-time">1 day ago</div>
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        Question: How do we determine what counts as "natural" human inclinations in an age 
+                        where everything seems culturally constructed? Isn't there a danger of just baptizing 
+                        our preferences as "natural law"?
+                    </div>
+                    <div class="comment-actions">
+                        <span class="comment-action-btn">
+                            <i data-feather="thumbs-up" class="w-4 h-4"></i> Helpful (3)
+                        </span>
+                        <span class="comment-action-btn">
+                            <i data-feather="message-circle" class="w-4 h-4"></i> Reply
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Scripts -->
+    <script src="navigation.js"></script>
+    <script src="footer.js"></script>
+
+    <!-- Comment System Script -->
+    <script>
+        // REPLACE THIS with your Google Apps Script URL for comments
+        const COMMENTS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxTX_1NtkXCOrtsHyTqjR5jjnhBvARcRQ2BMPU-A6N0h_G7Y28pSBTMU0Mw5XdoJDlR4A/exec';
+        const ARTICLE_ID = 'aquinas-natural-law-2026'; // Unique ID for this article
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('newCommentForm');
+            const submitBtn = document.getElementById('submitComment');
+            const successMessage = document.getElementById('successMessage');
+            const commentsList = document.getElementById('commentsList');
+            const commentCount = document.getElementById('commentCount');
+            
+            // Load existing comments when page loads
+            loadComments();
+            
+            // Handle comment submission
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const commentText = document.getElementById('commentText').value.trim();
+                const commentName = document.getElementById('commentName').value.trim();
+                const commentEmail = document.getElementById('commentEmail').value.trim();
+                
+                if (!commentText || !commentName) {
+                    alert('Please fill in your name and comment');
+                    return;
+                }
+                
+                // Disable button
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = '<span class="spinner"></span>Posting...';
+                
+                try {
+                    // Send to Google Sheets
+                    // Email is sent BUT will never be returned by the API - complete privacy!
+                    await fetch(COMMENTS_SCRIPT_URL, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            articleId: ARTICLE_ID,
+                            name: commentName,
+                            email: commentEmail, // Stored privately, never displayed
+                            comment: commentText,
+                            timestamp: new Date().toISOString()
+                        })
+                    });
+                    
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    successMessage.textContent = '✓ Your comment has been submitted and is awaiting moderation!';
+                    form.reset();
+                    
+                    // Hide success message after 7 seconds
+                    setTimeout(() => {
+                        successMessage.style.display = 'none';
+                    }, 7000);
+                    
+                    // Scroll to success message
+                    successMessage.scrollIntoView({ behavior: 'smooth' });
+                    
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error posting comment. Please try again or email hello@pillarandpew.com');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Post Comment';
+                }
+            });
+            
+            // Load approved comments from Google Sheets
+            async function loadComments() {
+                try {
+                    const response = await fetch(`${COMMENTS_SCRIPT_URL}?articleId=${ARTICLE_ID}`);
+                    const data = await response.json();
+                    
+                    if (data.status === 'success' && data.comments.length > 0) {
+                        displayComments(data.comments);
+                        commentCount.textContent = `${data.comments.length} Comment${data.comments.length !== 1 ? 's' : ''}`;
+                    } else {
+                        commentsList.innerHTML = `
+                            <div class="no-comments">
+                                <i data-feather="message-circle" class="w-16 h-16 mx-auto mb-4 text-gray-400"></i>
+                                <p class="text-lg font-bold mb-2">No comments yet</p>
+                                <p>Be the first to share your thoughts!</p>
+                            </div>
+                        `;
+                        commentCount.textContent = '0 Comments';
+                        if (typeof feather !== 'undefined') {
+                            feather.replace();
+                        }
+                    }
+                } catch (error) {
+                    console.error('Error loading comments:', error);
+                    commentsList.innerHTML = `
+                        <div class="no-comments">
+                            <p>Comments are temporarily unavailable. Please try again later.</p>
+                        </div>
+                    `;
+                }
+            }
+            
+            // Display comments on page
+            function displayComments(comments) {
+                commentsList.innerHTML = '';
+                
+                comments.forEach(comment => {
+                    const commentDiv = createCommentElement(comment);
+                    commentsList.appendChild(commentDiv);
+                });
+                
+                // Initialize Feather icons for new comments
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }
+            
+            // Create comment HTML element
+            function createCommentElement(comment) {
+                const div = document.createElement('div');
+                div.className = 'comment';
+                
+                // Get initials for avatar
+                const initials = getInitials(comment.name);
+                
+                // Format timestamp
+                const timeAgo = formatTimeAgo(new Date(comment.timestamp));
+                
+                div.innerHTML = `
+                    <div class="comment-header">
+                        <div class="comment-avatar">${initials}</div>
+                        <div>
+                            <div class="comment-author">${escapeHtml(comment.name)}</div>
+                            <div class="comment-time">${timeAgo}</div>
+                        </div>
+                    </div>
+                    <div class="comment-body">
+                        ${escapeHtml(comment.comment).replace(/\n/g, '<br>')}
+                    </div>
+                    <div class="comment-actions">
+                        <span class="comment-action-btn">
+                            <i data-feather="thumbs-up" class="w-4 h-4"></i> Helpful
+                        </span>
+                        <span class="comment-action-btn">
+                            <i data-feather="message-circle" class="w-4 h-4"></i> Reply
+                        </span>
+                    </div>
+                `;
+                
+                return div;
+            }
+            
+            // Helper: Get initials from name
+            function getInitials(name) {
+                const parts = name.trim().split(' ');
+                if (parts.length >= 2) {
+                    return (parts[0][0] + parts[1][0]).toUpperCase();
+                }
+                return name.substring(0, 2).toUpperCase();
+            }
+            
+            // Helper: Format time ago
+            function formatTimeAgo(date) {
+                const seconds = Math.floor((new Date() - date) / 1000);
+                
+                const intervals = {
+                    year: 31536000,
+                    month: 2592000,
+                    week: 604800,
+                    day: 86400,
+                    hour: 3600,
+                    minute: 60
+                };
+                
+                for (const [unit, secondsInUnit] of Object.entries(intervals)) {
+                    const interval = Math.floor(seconds / secondsInUnit);
+                    if (interval >= 1) {
+                        return `${interval} ${unit}${interval !== 1 ? 's' : ''} ago`;
+                    }
+                }
+                
+                return 'just now';
+            }
+            
+            // Helper: Escape HTML to prevent XSS
+            function escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+            
+            // Initialize Feather icons
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+    </script>
+
+    <!-- Feather Icons initialization -->
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    </script>
+
+</body>
+</html>
