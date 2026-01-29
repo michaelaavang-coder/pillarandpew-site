@@ -25,7 +25,7 @@ class CustomFooter extends HTMLElement {
                     <div class="footer-links">
                         <h4>Connect</h4>
                         <ul>
-                            <li><a href="#newsletter">Newsletter</a></li>
+                            <li><a href="guidelines.html">Submission Guidelines</a></li>
                             <li><a href="#" target="_blank" rel="noopener">X / Twitter</a></li>
                             <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
                             <li><a href="mailto:hello@pillarandpew.com">Email Us</a></li>

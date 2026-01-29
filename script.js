@@ -16,50 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(section);
     });
 
-    // Newsletter form validation and submission
-    const newsletterForm = document.querySelector('#newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const emailInput = this.querySelector('#newsletter-email');
-            const email = emailInput.value.trim();
-            
-            // Basic email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (emailRegex.test(email)) {
-                // TODO: Replace this with your actual email service integration
-                // Examples: Mailchimp, ConvertKit, SendGrid, etc.
-                
-                // For now, just show success message
-                alert('Thanks for subscribing! You\'ll hear from us soon.');
-                emailInput.value = '';
-                
-                // Example of how to integrate with a service:
-                /*
-                fetch('YOUR_EMAIL_SERVICE_ENDPOINT', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ email: email })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert('Thanks for subscribing!');
-                    emailInput.value = '';
-                })
-                .catch(error => {
-                    alert('Something went wrong. Please try again.');
-                    console.error('Error:', error);
-                });
-                */
-            } else {
-                alert('Please enter a valid email address.');
-            }
-        });
-    }
-
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
