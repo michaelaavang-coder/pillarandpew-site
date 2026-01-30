@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Pillar & Pew</title>
+    
+    <meta name="description" content="Log in to your Pillar & Pew account">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
+        
+        .form-input {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e5e7eb;
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: #c8102e;
+            box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.1);
+        }
+        
+        .form-input.error {
+            border-color: #dc2626;
+        }
+        
+        .error-message {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+        
+        .error-message.show {
+            display: block;
+        }
+        
+        .alert-error {
+            background-color: #fee2e2;
+            border-left: 4px solid #dc2626;
+            color: #991b1b;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+        
+        .alert-error.show {
+            display: block;
+        }
+        
+        .spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #c8102e;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .btn-disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+
+    <custom-navigation></custom-navigation>
+
+    <section class="py-20 px-4 max-w-lg mx-auto">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-black uppercase mb-4">Login</h1>
+            <p class="text-xl text-gray-600">Welcome back to Pillar & Pew</p>
+        </div>
+
+        <div id="errorAlert" class="alert-error">
+            <div class="flex items-start">
+                <i data-feather="alert-circle" class="w-5 h-5 mr-3 mt-0.5"></i>
+                <span id="errorMessage"></span>
+            </div>
+        </div>
+
+        <form id="loginForm" class="bg-white border-2 border-black p-8">
+            <div class="mb-6">
+                <label for="email" class="block font-bold mb-2 uppercase text-sm">
+                    Email Address <span class="text-red-600">*</span>
+                </label>
+                <input 
+                    type="email" 
+                    id="email" 
+                    name="email" 
+                    class="form-input" 
+                    required
+                    placeholder="your.email@example.com"
+                    autocomplete="email"
+                >
+                <div class="error-message" id="emailError">Please enter your email address</div>
+            </div>
+
+            <div class="mb-6">
+                <label for="password" class="block font-bold mb-2 uppercase text-sm">
+                    Password <span class="text-red-600">*</span>
+                </label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-input" 
+                    required
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                >
+                <div class="error-message" id="passwordError">Please enter your password</div>
+            </div>
+
+            <div class="mb-6 flex items-center justify-between">
+                <label class="flex items-center">
+                    <input type="checkbox" id="rememberMe" class="mr-2">
+                    <span class="text-sm">Remember me</span>
+                </label>
+                <a href="/cdn-cgi/l/email-protection#6c04090000032c1c0500000d1e0d02081c091b420f0301531f190e06090f18513c0d1f1f1b031e084c3e091f09184c3e091d19091f18" class="text-sm text-red-600 font-bold hover:underline">Forgot password?</a>
+            </div>
+
+            <button 
+                type="submit" 
+                id="submitBtn"
+                class="w-full bg-red-600 hover:bg-red-700 text-white px-8 py-4 font-bold uppercase tracking-wider transition"
+            >
+                Login
+            </button>
+
+            <div class="mt-6 text-center">
+                <p class="text-gray-600">
+                    Don't have an account? 
+                    <a href="register.html" class="text-red-600 font-bold hover:underline">Create Account</a>
+                </p>
+            </div>
+        </form>
+
+        <div class="mt-8 text-center text-sm text-gray-600">
+            <p>Having trouble? <a href="/cdn-cgi/l/email-protection#1078757c7c7f5060797c7c7162717e746075673e737f7d" class="text-red-600 hover:underline">Contact us</a></p>
+        </div>
+    </section>
+
+    <custom-footer></custom-footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="navigation.js"></script>
+    <script src="footer.js"></script>
+
+    <script>
+        // Your authentication Google Apps Script URL
+        // UPDATE THIS after you deploy the auth script from AUTH_SYSTEM_SCRIPT.md
+        const AUTH_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby7iNVkMT2NXDUIPxWLv-ljdZ0LInjg9gIje4zweVdiR0wGDEQdpBIxTul02LazO9sWPA/exec';
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('loginForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const errorAlert = document.getElementById('errorAlert');
+            const errorMessage = document.getElementById('errorMessage');
+
+            // Check if already logged in
+            const currentUser = localStorage.getItem('pillarandpew_user') || sessionStorage.getItem('pillarandpew_user');
+            if (currentUser) {
+                // Already logged in, redirect to home
+                window.location.href = 'index.html';
+            }
+
+            // Form submission
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                clearErrors();
+
+                const email = document.getElementById('email').value.trim();
+                const password = document.getElementById('password').value;
+                const rememberMe = document.getElementById('rememberMe').checked;
+
+                // Validate
+                let isValid = true;
+
+                if (!email || !isValidEmail(email)) {
+                    showError('email', 'Please enter a valid email address');
+                    isValid = false;
+                }
+
+                if (!password) {
+                    showError('password', 'Please enter your password');
+                    isValid = false;
+                }
+
+                if (!isValid) return;
+
+                // Disable button
+                submitBtn.disabled = true;
+                submitBtn.classList.add('btn-disabled');
+                submitBtn.innerHTML = '<span class="spinner"></span>Logging In...';
+
+                try {
+                    const response = await fetch(AUTH_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            action: 'login',
+                            email: email,
+                            password: password
+                        })
+                    });
+
+                    const data = await response.json();
+
+                    if (data.status === 'success') {
+                        // Store user data
+                        const userData = {
+                            firstName: data.user.firstName,
+                            lastName: data.user.lastName,
+                            email: data.user.email,
+                            loginTime: new Date().toISOString()
+                        };
+
+                        // Store in localStorage (or sessionStorage if not "remember me")
+                        if (rememberMe) {
+                            localStorage.setItem('pillarandpew_user', JSON.stringify(userData));
+                        } else {
+                            sessionStorage.setItem('pillarandpew_user', JSON.stringify(userData));
+                        }
+
+                        // Redirect to home or intended page
+                        const redirect = new URLSearchParams(window.location.search).get('redirect') || 'index.html';
+                        window.location.href = redirect;
+
+                    } else {
+                        showAlert(data.message || 'Login failed. Please check your credentials.');
+                    }
+
+                } catch (error) {
+                    console.error('Error:', error);
+                    showAlert('Error logging in. Please try again or contact hello@pillarandpew.com');
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('btn-disabled');
+                    submitBtn.innerHTML = 'Login';
+                }
+            });
+
+            function showError(fieldName, message) {
+                const input = document.getElementById(fieldName);
+                const errorDiv = document.getElementById(fieldName + 'Error');
+                
+                input.classList.add('error');
+                errorDiv.textContent = message;
+                errorDiv.classList.add('show');
+            }
+
+            function clearErrors() {
+                const inputs = document.querySelectorAll('.form-input');
+                const errors = document.querySelectorAll('.error-message');
+                
+                inputs.forEach(input => input.classList.remove('error'));
+                errors.forEach(error => error.classList.remove('show'));
+                errorAlert.classList.remove('show');
+            }
+
+            function showAlert(message) {
+                errorMessage.textContent = message;
+                errorAlert.classList.add('show');
+                errorAlert.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+
+            function isValidEmail(email) {
+                const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return regex.test(email);
+            }
+
+            // Initialize Feather icons
+            if (typeof feath
