@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account | Pillar & Pew</title>
     
-    <!-- SEO Meta Tags -->
     <meta name="description" content="Create an account to comment and engage with articles on Pillar & Pew">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Feather Icons -->
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
         
-        /* Custom styles for form */
         .form-input {
             width: 100%;
             padding: 0.875rem 1rem;
@@ -81,29 +77,53 @@
             opacity: 0.6;
             cursor: not-allowed;
         }
+        
+        .password-strength {
+            height: 4px;
+            background: #e5e7eb;
+            margin-top: 0.5rem;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .password-strength-bar {
+            height: 100%;
+            transition: width 0.3s, background-color 0.3s;
+        }
+        
+        .password-strength-weak {
+            width: 33%;
+            background-color: #dc2626;
+        }
+        
+        .password-strength-medium {
+            width: 66%;
+            background-color: #f59e0b;
+        }
+        
+        .password-strength-strong {
+            width: 100%;
+            background-color: #10b981;
+        }
     </style>
 </head>
 <body class="font-inter bg-white text-black">
 
-    <!-- Sticky Navigation -->
     <custom-navigation></custom-navigation>
 
-    <!-- Registration Form Section -->
     <section class="py-20 px-4 max-w-2xl mx-auto">
         <div class="text-center mb-12">
             <h1 class="text-4xl md:text-5xl font-black uppercase mb-4">Create Account</h1>
             <p class="text-xl text-gray-600">Join the conversation and engage with our community</p>
         </div>
 
-        <!-- Success Message -->
         <div id="successMessage" class="success-message">
             <div class="flex items-center">
                 <i data-feather="check-circle" class="w-6 h-6 mr-3"></i>
-                <span>Account created successfully! You can now comment on articles.</span>
+                <span>Account created successfully! Redirecting to login...</span>
             </div>
         </div>
 
-        <!-- Registration Form -->
         <form id="registrationForm" class="bg-white border-2 border-black p-8 md:p-12">
             <div class="mb-6">
                 <label for="firstName" class="block font-bold mb-2 uppercase text-sm">
@@ -135,7 +155,7 @@
                 <div class="error-message" id="lastNameError">Please enter your last name</div>
             </div>
 
-            <div class="mb-8">
+            <div class="mb-6">
                 <label for="email" class="block font-bold mb-2 uppercase text-sm">
                     Email Address <span class="text-red-600">*</span>
                 </label>
@@ -148,6 +168,41 @@
                     placeholder="your.email@example.com"
                 >
                 <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="mb-6">
+                <label for="password" class="block font-bold mb-2 uppercase text-sm">
+                    Password <span class="text-red-600">*</span>
+                </label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    class="form-input" 
+                    required
+                    placeholder="Create a strong password"
+                    minlength="8"
+                >
+                <div class="password-strength">
+                    <div class="password-strength-bar" id="passwordStrengthBar"></div>
+                </div>
+                <div class="error-message" id="passwordError">Password must be at least 8 characters</div>
+                <p class="text-sm text-gray-600 mt-2">Use at least 8 characters with letters and numbers</p>
+            </div>
+
+            <div class="mb-6">
+                <label for="confirmPassword" class="block font-bold mb-2 uppercase text-sm">
+                    Confirm Password <span class="text-red-600">*</span>
+                </label>
+                <input 
+                    type="password" 
+                    id="confirmPassword" 
+                    name="confirmPassword" 
+                    class="form-input" 
+                    required
+                    placeholder="Re-enter your password"
+                >
+                <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
             </div>
 
             <div class="mb-6">
@@ -177,33 +232,52 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <custom-footer></custom-footer>
 
-    <!-- Scripts -->
     <script src="navigation.js"></script>
     <script src="footer.js"></script>
 
-    <!-- Registration Form Script -->
     <script>
-        // Replace this URL with your Google Apps Script Web App URL
-        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby7iNVkMT2NXDUIPxWLv-ljdZ0LInjg9gIje4zweVdiR0wGDEQdpBIxTul02LazO9sWPA/exec';
+        // Your authentication Google Apps Script URL
+        // UPDATE THIS after you deploy the auth script from AUTH_SYSTEM_SCRIPT.md
+        const AUTH_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby7iNVkMT2NXDUIPxWLv-ljdZ0LInjg9gIje4zweVdiR0wGDEQdpBIxTul02LazO9sWPA/exec';
 
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('registrationForm');
             const submitBtn = document.getElementById('submitBtn');
             const successMessage = document.getElementById('successMessage');
+            const passwordInput = document.getElementById('password');
+            const confirmPasswordInput = document.getElementById('confirmPassword');
+            const passwordStrengthBar = document.getElementById('passwordStrengthBar');
 
+            // Password strength indicator
+            passwordInput.addEventListener('input', function() {
+                const password = this.value;
+                const strength = calculatePasswordStrength(password);
+                
+                passwordStrengthBar.className = 'password-strength-bar';
+                if (password.length > 0) {
+                    if (strength < 40) {
+                        passwordStrengthBar.classList.add('password-strength-weak');
+                    } else if (strength < 70) {
+                        passwordStrengthBar.classList.add('password-strength-medium');
+                    } else {
+                        passwordStrengthBar.classList.add('password-strength-strong');
+                    }
+                }
+            });
+
+            // Form submission
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
 
-                // Clear previous errors
                 clearErrors();
 
-                // Get form values
                 const firstName = document.getElementById('firstName').value.trim();
                 const lastName = document.getElementById('lastName').value.trim();
                 const email = document.getElementById('email').value.trim();
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
 
                 // Validate
                 let isValid = true;
@@ -223,38 +297,57 @@
                     isValid = false;
                 }
 
+                if (password.length < 8) {
+                    showError('password', 'Password must be at least 8 characters');
+                    isValid = false;
+                }
+
+                if (password !== confirmPassword) {
+                    showError('confirmPassword', 'Passwords do not match');
+                    isValid = false;
+                }
+
                 if (!isValid) return;
 
-                // Disable button and show loading
+                // Disable button
                 submitBtn.disabled = true;
                 submitBtn.classList.add('btn-disabled');
                 submitBtn.innerHTML = '<span class="spinner"></span>Creating Account...';
 
                 try {
-                    // Send to Google Sheets
-                    const response = await fetch(GOOGLE_SCRIPT_URL, {
+                    const response = await fetch(AUTH_SCRIPT_URL, {
                         method: 'POST',
-                        mode: 'no-cors', // Important for Google Apps Script
                         headers: {
                             'Content-Type': 'application/json',
                         },
                         body: JSON.stringify({
+                            action: 'register',
                             firstName: firstName,
                             lastName: lastName,
-                            email: email
+                            email: email,
+                            password: password
                         })
                     });
 
-                    // Since we're using no-cors, we can't read the response
-                    // We'll assume success if no error was thrown
-                    showSuccess();
-                    form.reset();
+                    const data = await response.json();
+
+                    if (data.status === 'success') {
+                        successMessage.classList.add('show');
+                        form.reset();
+                        passwordStrengthBar.className = 'password-strength-bar';
+                        
+                        // Redirect to login after 2 seconds
+                        setTimeout(() => {
+                            window.location.href = 'login.html';
+                        }, 2000);
+                    } else {
+                        alert(data.message || 'Registration failed. Please try again.');
+                    }
 
                 } catch (error) {
                     console.error('Error:', error);
-                    alert('Something went wrong. Please try again or contact us at hello@pillarandpew.com');
+                    alert('Error creating account. Please try again or contact hello@pillarandpew.com');
                 } finally {
-                    // Re-enable button
                     submitBtn.disabled = false;
                     submitBtn.classList.remove('btn-disabled');
                     submitBtn.innerHTML = 'Create Account';
@@ -279,19 +372,22 @@
                 successMessage.classList.remove('show');
             }
 
-            function showSuccess() {
-                successMessage.classList.add('show');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                
-                // Hide success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.classList.remove('show');
-                }, 5000);
-            }
-
             function isValidEmail(email) {
                 const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 return regex.test(email);
+            }
+
+            function calculatePasswordStrength(password) {
+                let strength = 0;
+                
+                if (password.length >= 8) strength += 25;
+                if (password.length >= 12) strength += 25;
+                if (/[a-z]/.test(password)) strength += 15;
+                if (/[A-Z]/.test(password)) strength += 15;
+                if (/[0-9]/.test(password)) strength += 10;
+                if (/[^A-Za-z0-9]/.test(password)) strength += 10;
+                
+                return strength;
             }
 
             // Initialize Feather icons
@@ -301,17 +397,10 @@
         });
     </script>
 
-    <!-- Feather Icons initialization -->
     <script>
         if (typeof feather !== 'undefined') {
             feather.replace();
         }
-        
-        document.addEventListener('DOMContentLoaded', function () {
-            if (typeof feather !== 'undefined') {
-                feather.replace();
-            }
-        });
     </script>
 
 </body>
