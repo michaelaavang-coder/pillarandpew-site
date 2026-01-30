@@ -134,7 +134,7 @@
                     <input type="checkbox" id="rememberMe" class="mr-2">
                     <span class="text-sm">Remember me</span>
                 </label>
-                <a href="/cdn-cgi/l/email-protection#6c04090000032c1c0500000d1e0d02081c091b420f0301531f190e06090f18513c0d1f1f1b031e084c3e091f09184c3e091d19091f18" class="text-sm text-red-600 font-bold hover:underline">Forgot password?</a>
+                <a href="mailto:hello@pillarandpew.com?subject=Password Reset Request" class="text-sm text-red-600 font-bold hover:underline">Forgot password?</a>
             </div>
 
             <button 
@@ -154,33 +154,29 @@
         </form>
 
         <div class="mt-8 text-center text-sm text-gray-600">
-            <p>Having trouble? <a href="/cdn-cgi/l/email-protection#1078757c7c7f5060797c7c7162717e746075673e737f7d" class="text-red-600 hover:underline">Contact us</a></p>
+            <p>Having trouble? <a href="mailto:hello@pillarandpew.com" class="text-red-600 hover:underline">Contact us</a></p>
         </div>
     </section>
 
     <custom-footer></custom-footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="navigation.js"></script>
+    <script src="navigation.js"></script>
     <script src="footer.js"></script>
 
     <script>
-        // Your authentication Google Apps Script URL
-        // UPDATE THIS after you deploy the auth script from AUTH_SYSTEM_SCRIPT.md
         const AUTH_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzRfYFwqhYOa55tZQ3s_7uxJbvokjvMstMHykGymqXJ/exec';
+
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('loginForm');
             const submitBtn = document.getElementById('submitBtn');
             const errorAlert = document.getElementById('errorAlert');
             const errorMessage = document.getElementById('errorMessage');
 
-            // Check if already logged in
             const currentUser = localStorage.getItem('pillarandpew_user') || sessionStorage.getItem('pillarandpew_user');
             if (currentUser) {
-                // Already logged in, redirect to home
                 window.location.href = 'index.html';
             }
 
-            // Form submission
             form.addEventListener('submit', async function(e) {
                 e.preventDefault();
 
@@ -190,7 +186,6 @@
                 const password = document.getElementById('password').value;
                 const rememberMe = document.getElementById('rememberMe').checked;
 
-                // Validate
                 let isValid = true;
 
                 if (!email || !isValidEmail(email)) {
@@ -205,7 +200,6 @@
 
                 if (!isValid) return;
 
-                // Disable button
                 submitBtn.disabled = true;
                 submitBtn.classList.add('btn-disabled');
                 submitBtn.innerHTML = '<span class="spinner"></span>Logging In...';
@@ -226,7 +220,6 @@
                     const data = await response.json();
 
                     if (data.status === 'success') {
-                        // Store user data
                         const userData = {
                             firstName: data.user.firstName,
                             lastName: data.user.lastName,
@@ -234,14 +227,12 @@
                             loginTime: new Date().toISOString()
                         };
 
-                        // Store in localStorage (or sessionStorage if not "remember me")
                         if (rememberMe) {
                             localStorage.setItem('pillarandpew_user', JSON.stringify(userData));
                         } else {
                             sessionStorage.setItem('pillarandpew_user', JSON.stringify(userData));
                         }
 
-                        // Redirect to home with success parameter
                         window.location.href = 'index.html?login=success';
 
                     } else {
@@ -287,5 +278,17 @@
                 return regex.test(email);
             }
 
-            // Initialize Feather icons
-            if (typeof feath
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+    </script>
+
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+    </script>
+
+</body>
+</html>
