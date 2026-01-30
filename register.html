@@ -309,9 +309,8 @@
                 submitBtn.innerHTML = '<span class="spinner"></span>Creating Account...';
 
                 try {
-                    await fetch(AUTH_SCRIPT_URL, {
+                    const response = await fetch(AUTH_SCRIPT_URL, {
                         method: 'POST',
-                        mode: 'no-cors',
                         headers: {
                             'Content-Type': 'application/json',
                         },
@@ -324,14 +323,19 @@
                         })
                     });
 
-                    // With no-cors mode, assume success if no error thrown
-                    successMessage.classList.add('show');
-                    form.reset();
-                    passwordStrengthBar.className = 'password-strength-bar';
-                    
-                    setTimeout(() => {
-                        window.location.href = 'login.html';
-                    }, 2000);
+                    const data = await response.json();
+
+                    if (data.status === 'success') {
+                        successMessage.classList.add('show');
+                        form.reset();
+                        passwordStrengthBar.className = 'password-strength-bar';
+                        
+                        setTimeout(() => {
+                            window.location.href = 'login.html';
+                        }, 2000);
+                    } else {
+                        alert(data.message || 'Registration failed. Please try again.');
+                    }
 
                 } catch (error) {
                     console.error('Error:', error);
