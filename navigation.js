@@ -1,5 +1,9 @@
 class CustomNavigation extends HTMLElement {
     connectedCallback() {
+        // Check if user is logged in
+        const userData = localStorage.getItem('pillarandpew_user') || sessionStorage.getItem('pillarandpew_user');
+        const user = userData ? JSON.parse(userData) : null;
+        
         this.innerHTML = `
             <nav class="nav-wrapper">
                 <div class="nav-container">
@@ -10,6 +14,12 @@ class CustomNavigation extends HTMLElement {
                         <a href="#articles">Articles</a>
                         <a href="#submit">Submit</a>
                         <a href="#contact">Contact</a>
+                        ${user ? `
+                            <span class="user-welcome">Welcome, ${user.firstName}</span>
+                            <a href="#" id="logoutBtn" class="logout-link">Logout</a>
+                        ` : `
+                            <a href="login.html" class="login-link">Login</a>
+                        `}
                     </div>
                     <button class="mobile-menu-button" id="mobile-menu-btn" aria-label="Toggle mobile menu">
                         <i data-feather="menu"></i>
@@ -21,6 +31,12 @@ class CustomNavigation extends HTMLElement {
                     <a href="#articles">Articles</a>
                     <a href="#submit">Submit</a>
                     <a href="#contact">Contact</a>
+                    ${user ? `
+                        <span class="mobile-user-welcome">Welcome, ${user.firstName}</span>
+                        <a href="#" id="mobileLogoutBtn" class="logout-link">Logout</a>
+                    ` : `
+                        <a href="login.html" class="login-link">Login</a>
+                    `}
                 </div>
             </nav>
             
@@ -56,6 +72,7 @@ class CustomNavigation extends HTMLElement {
                 .nav-links {
                     display: flex;
                     gap: 2rem;
+                    align-items: center;
                 }
                 .nav-links a {
                     color: white;
@@ -68,6 +85,33 @@ class CustomNavigation extends HTMLElement {
                 }
                 .nav-links a:hover {
                     color: #c8102e;
+                }
+                .user-welcome {
+                    color: #c8102e;
+                    font-weight: bold;
+                    font-size: 0.9rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                }
+                .logout-link {
+                    color: white !important;
+                    border: 1px solid white;
+                    padding: 0.5rem 1rem;
+                    transition: background-color 0.3s, color 0.3s;
+                }
+                .logout-link:hover {
+                    background-color: white;
+                    color: #000 !important;
+                }
+                .login-link {
+                    color: white !important;
+                    border: 1px solid #c8102e;
+                    padding: 0.5rem 1rem;
+                    background-color: #c8102e;
+                    transition: background-color 0.3s;
+                }
+                .login-link:hover {
+                    background-color: #a00d26;
                 }
                 .mobile-menu-button {
                     display: none;
@@ -88,7 +132,7 @@ class CustomNavigation extends HTMLElement {
                 .mobile-menu.hidden {
                     display: none;
                 }
-                .mobile-menu a {
+                .mobile-menu a, .mobile-menu span {
                     color: white;
                     text-decoration: none;
                     padding: 0.75rem 0;
@@ -102,8 +146,11 @@ class CustomNavigation extends HTMLElement {
                 .mobile-menu a:hover {
                     color: #c8102e;
                 }
-                .mobile-menu a:last-child {
+                .mobile-menu a:last-child, .mobile-menu span:last-child {
                     border-bottom: none;
+                }
+                .mobile-user-welcome {
+                    color: #c8102e;
                 }
                 
                 @media (max-width: 768px) {
@@ -121,6 +168,30 @@ class CustomNavigation extends HTMLElement {
                 }
             </style>
         `;
+        
+        // Logout functionality
+        const logoutBtn = this.querySelector('#logoutBtn');
+        const mobileLogoutBtn = this.querySelector('#mobileLogoutBtn');
+        
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleLogout();
+            });
+        }
+        
+        if (mobileLogoutBtn) {
+            mobileLogoutBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                handleLogout();
+            });
+        }
+        
+        function handleLogout() {
+            localStorage.removeItem('pillarandpew_user');
+            sessionStorage.removeItem('pillarandpew_user');
+            window.location.href = 'index.html';
+        }
         
         // Mobile menu toggle functionality
         const mobileMenuBtn = this.querySelector('#mobile-menu-btn');

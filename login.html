@@ -242,9 +242,8 @@
                             sessionStorage.setItem('pillarandpew_user', JSON.stringify(userData));
                         }
 
-                        // Redirect to home or intended page
-                        const redirect = new URLSearchParams(window.location.search).get('redirect') || 'index.html';
-                        window.location.href = redirect;
+                        // Redirect to home with success parameter
+                        window.location.href = 'index.html?login=success';
 
                     } else {
                         showAlert(data.message || 'Login failed. Please check your credentials.');

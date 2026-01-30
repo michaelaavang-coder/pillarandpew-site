@@ -301,6 +301,16 @@
             
             <!-- Comment Form -->
             <div class="comment-form" id="commentForm">
+                <!-- Login Required Message (shown when not logged in) -->
+                <div id="loginRequired" style="display: none; background: #fee2e2; border-left: 4px solid #c8102e; padding: 1.5rem; margin-bottom: 1.5rem;">
+                    <h3 class="text-xl font-bold mb-2" style="color: #991b1b;">Login Required to Comment</h3>
+                    <p style="color: #7f1d1d; margin-bottom: 1rem;">You must be logged in to leave a comment. Please log in or create an account.</p>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="login.html?redirect=article-demo-with-comments.html" style="background: #c8102e; color: white; padding: 0.75rem 1.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Login</a>
+                        <a href="register.html" style="border: 2px solid #c8102e; color: #c8102e; padding: 0.75rem 1.5rem; text-decoration: none; font-weight: bold; display: inline-block;">Create Account</a>
+                    </div>
+                </div>
+                
                 <h3 class="text-xl font-bold mb-4">Leave a Comment</h3>
                 
                 <form id="newCommentForm">
@@ -317,11 +327,13 @@
                             id="commentName" 
                             placeholder="Display Name *" 
                             required
+                            readonly
                         >
                         <input 
                             type="email" 
                             id="commentEmail" 
-                            placeholder="Email (optional, never shown)"
+                            placeholder="Email (never shown)"
+                            readonly
                         >
                     </div>
                     
@@ -330,8 +342,7 @@
                     </button>
                     
                     <p class="privacy-note">
-                        Your email will never be displayed publicly. You can use a pseudonym for your display name. 
-                        Comments are moderated and will appear after approval.
+                        Your email will never be displayed publicly. Comments are moderated and will appear after approval.
                     </p>
                 </form>
             </div>
@@ -437,6 +448,28 @@
             const successMessage = document.getElementById('successMessage');
             const commentsList = document.getElementById('commentsList');
             const commentCount = document.getElementById('commentCount');
+            const loginRequired = document.getElementById('loginRequired');
+            const commentForm = document.getElementById('commentForm');
+            
+            // Check if user is logged in
+            const userData = localStorage.getItem('pillarandpew_user') || sessionStorage.getItem('pillarandpew_user');
+            
+            if (userData) {
+                const user = JSON.parse(userData);
+                
+                // User is logged in - show comment form and auto-fill
+                form.style.display = 'block';
+                loginRequired.style.display = 'none';
+                
+                // Auto-fill user info
+                document.getElementById('commentName').value = `${user.firstName} ${user.lastName}`;
+                document.getElementById('commentEmail').value = user.email;
+                
+            } else {
+                // User not logged in - show login required message and hide form
+                form.style.display = 'none';
+                loginRequired.style.display = 'block';
+            }
             
             // Load existing comments when page loads
             loadComments();

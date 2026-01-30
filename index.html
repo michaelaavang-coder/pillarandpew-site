@@ -29,6 +29,12 @@
     <!-- Sticky Navigation -->
     <custom-navigation></custom-navigation>
 
+    <!-- Welcome Back Banner (for logged-in users) -->
+    <div id="welcomeBanner" style="display: none; background: linear-gradient(135deg, #c8102e 0%, #a00d26 100%); color: white; padding: 1rem 2rem; text-align: center; font-weight: bold; box-shadow: 0 2px 10px rgba(0,0,0,0.2);">
+        <i data-feather="user-check" style="width: 20px; height: 20px; display: inline-block; vertical-align: middle; margin-right: 8px;"></i>
+        <span id="welcomeMessage"></span>
+    </div>
+
     <!-- Hero Section -->
     <section class="relative h-screen bg-black overflow-hidden">
         <div class="absolute inset-0 bg-red-900 opacity-20"></div>
@@ -302,6 +308,47 @@
                     feather.replace();
                 }
             }, 100);
+        });
+    </script>
+
+    <!-- Welcome Back Banner Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user just logged in (from URL parameter)
+            const urlParams = new URLSearchParams(window.location.search);
+            const justLoggedIn = urlParams.get('login') === 'success';
+            
+            // Get user data
+            const userData = localStorage.getItem('pillarandpew_user') || sessionStorage.getItem('pillarandpew_user');
+            
+            if (userData) {
+                const user = JSON.parse(userData);
+                const welcomeBanner = document.getElementById('welcomeBanner');
+                const welcomeMessage = document.getElementById('welcomeMessage');
+                
+                if (justLoggedIn) {
+                    // Show "Welcome back" message for new login
+                    welcomeMessage.textContent = `Welcome back, ${user.firstName}! You're now logged in.`;
+                    welcomeBanner.style.display = 'block';
+                    
+                    // Remove the URL parameter
+                    window.history.replaceState({}, document.title, window.location.pathname);
+                    
+                    // Hide banner after 5 seconds
+                    setTimeout(() => {
+                        welcomeBanner.style.transition = 'opacity 0.5s';
+                        welcomeBanner.style.opacity = '0';
+                        setTimeout(() => {
+                            welcomeBanner.style.display = 'none';
+                        }, 500);
+                    }, 5000);
+                }
+                
+                // Replace Feather icons in the banner
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }
         });
     </script>
 
