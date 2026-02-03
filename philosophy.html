@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philosophy & Reason | Pillar & Pew</title>
+    
+    <meta name="description" content="Deep dives into classical philosophy and modern applications. Explore timeless wisdom applied to contemporary challenges.">
+    <meta name="keywords" content="philosophy, natural law, Aquinas, Aristotle, Augustine, classical thought, reason">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+
+    <!-- Sticky Navigation -->
+    <custom-navigation></custom-navigation>
+
+    <!-- Category Header -->
+    <section class="bg-gradient-to-br from-gray-900 to-black text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center mb-6">
+                <i data-feather="book-open" class="w-16 h-16 mr-4 text-red-600"></i>
+                <div>
+                    <h1 class="font-montserrat text-5xl md:text-6xl font-black uppercase">
+                        Philosophy & Reason
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mt-2">
+                        Deep dives into classical thought and modern applications
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 border-l-4 border-red-600 pl-6">
+                <p class="text-lg leading-relaxed">
+                    Explore timeless philosophical truths through the lens of classical thinkers like Aquinas, 
+                    Aristotle, and Augustine. We examine metaphysics, epistemology, ethics, and natural law—making 
+                    rigorous thinking accessible and relevant to today's challenges.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-black uppercase">
+                Latest <span class="text-red-600">Articles</span>
+            </h2>
+            <div class="text-sm text-gray-600">
+                <span id="articleCount">1 Article</span>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articlesGrid">
+            <!-- Article 1 - Aquinas on Natural Law -->
+            <article class="bg-white shadow-lg overflow-hidden transition-transform hover:transform hover:-translate-y-1 border-2 border-gray-200">
+                <div class="w-full h-48 bg-gradient-to-br from-gray-800 to-black flex items-center justify-center">
+                    <div class="text-center">
+                        <i data-feather="book-open" class="w-16 h-16 mx-auto mb-2 text-red-600"></i>
+                        <p class="text-white font-bold">Philosophy & Reason</p>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <div class="text-xs uppercase text-red-600 font-bold mb-2">
+                        Published January 28, 2026
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Aquinas on Natural Law in 2026</h3>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        How classical philosophy applies to modern ethical challenges including AI, 
+                        genetic engineering, and digital ethics.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500 mb-4">
+                        <i data-feather="clock" class="w-4 h-4 mr-1"></i>
+                        <span>8 min read</span>
+                    </div>
+                    <a href="article-demo-with-comments.html" class="text-red-600 font-bold hover:underline inline-flex items-center">
+                        Read Article 
+                        <i data-feather="arrow-right" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </article>
+
+            <!-- Placeholder for future articles -->
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="edit" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">More Articles Coming Soon</h3>
+                    <p class="text-gray-500 mb-4">Check back for new philosophical insights and analysis</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="edit" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">More Articles Coming Soon</h3>
+                    <p class="text-gray-500 mb-4">Check back for new philosophical insights and analysis</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Topics Covered -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-black uppercase mb-8 text-center">
+                Topics <span class="text-red-600">We Cover</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Natural Law Theory</h3>
+                    <p class="text-sm text-gray-600">Aquinas, fundamental principles, moral reasoning</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Metaphysics</h3>
+                    <p class="text-sm text-gray-600">Being, essence, existence, causality</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Epistemology</h3>
+                    <p class="text-sm text-gray-600">Knowledge, truth, reason, faith</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Ethics & Virtue</h3>
+                    <p class="text-sm text-gray-600">Moral philosophy, human flourishing, the good life</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-black text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black uppercase mb-4">
+                Contribute Your <span class="text-red-600">Philosophical Insights</span>
+            </h2>
+            <p class="text-xl mb-8">
+                Have deep philosophical insights to share? We welcome rigorous thinkers who can make 
+                classical philosophy accessible and relevant.
+            </p>
+            <a href="guidelines.html" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-bold uppercase tracking-wider transition">
+                View Submission Guidelines
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Scripts -->
+    <script src="navigation.js"></script>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Feather Icons initialization -->
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>

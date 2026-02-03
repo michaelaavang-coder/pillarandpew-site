@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firearms & Gear | Pillar & Pew</title>
+    
+    <meta name="description" content="Practical takes on firearms, tactical equipment, and shooting sports. Reviews, training tips, and honest gear assessments.">
+    <meta name="keywords" content="firearms, guns, shooting sports, tactical gear, concealed carry, self-defense, 2A">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+
+    <!-- Sticky Navigation -->
+    <custom-navigation></custom-navigation>
+
+    <!-- Category Header -->
+    <section class="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center mb-6">
+                <i data-feather="crosshair" class="w-16 h-16 mr-4 text-red-600"></i>
+                <div>
+                    <h1 class="font-montserrat text-5xl md:text-6xl font-black uppercase">
+                        Firearms & Gear
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mt-2">
+                        Practical takes on firearms and tactical equipment
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 border-l-4 border-red-600 pl-6">
+                <p class="text-lg leading-relaxed">
+                    No-nonsense reviews, range reports, and practical advice for shooting enthusiasts. From concealed 
+                    carry considerations to gear upgrades, training philosophy to hot takes on firearms culture—we 
+                    combine technical expertise with accessible writing for engaged enthusiasts.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-black uppercase">
+                Latest <span class="text-red-600">Articles</span>
+            </h2>
+            <div class="text-sm text-gray-600">
+                <span id="articleCount">Coming Soon</span>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articlesGrid">
+            <!-- Placeholder articles -->
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="target" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Articles Coming Soon</h3>
+                    <p class="text-gray-500 mb-4">Gear reviews and shooting sports insights</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="shield" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">More Coming Soon</h3>
+                    <p class="text-gray-500 mb-4">Training tips and tactical considerations</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="edit" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Be the First to Contribute</h3>
+                    <p class="text-gray-500 mb-4">Share your firearms expertise</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Topics Covered -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-black uppercase mb-8 text-center">
+                Topics <span class="text-red-600">We Cover</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Gear Reviews</h3>
+                    <p class="text-sm text-gray-600">Honest assessments of firearms and equipment</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Training & Skills</h3>
+                    <p class="text-sm text-gray-600">Practical shooting advice and technique</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Concealed Carry</h3>
+                    <p class="text-sm text-gray-600">EDC considerations and defensive tactics</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Gun Culture</h3>
+                    <p class="text-sm text-gray-600">Commentary on 2A issues and trends</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Insight -->
+    <section class="py-16 bg-red-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i data-feather="crosshair" class="w-12 h-12 mx-auto mb-6"></i>
+            <blockquote class="text-2xl md:text-3xl font-bold mb-6">
+                "The right to keep and bear arms is not just about self-defense—it's about the fundamental 
+                dignity of the human person and the natural right to protect what matters."
+            </blockquote>
+            <p class="text-lg">— Pillar & Pew Editorial Team</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-black text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black uppercase mb-4">
+                Share Your <span class="text-red-600">Expertise</span>
+            </h2>
+            <p class="text-xl mb-8">
+                Whether you're a competitive shooter, firearms instructor, or passionate enthusiast, 
+                we welcome practical knowledge from the range and field.
+            </p>
+            <a href="guidelines.html" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-bold uppercase tracking-wider transition">
+                View Submission Guidelines
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Scripts -->
+    <script src="navigation.js"></script>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Feather Icons initialization -->
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>

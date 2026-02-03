@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culture & Commentary | Pillar & Pew</title>
+    
+    <meta name="description" content="Sharp analysis of current events, cultural trends, and principled takes on politics and society. Original insight over mainstream narratives.">
+    <meta name="keywords" content="culture, commentary, politics, current events, media critique, social analysis">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+
+    <!-- Sticky Navigation -->
+    <custom-navigation></custom-navigation>
+
+    <!-- Category Header -->
+    <section class="bg-gradient-to-br from-red-800 to-black text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center mb-6">
+                <i data-feather="zap" class="w-16 h-16 mr-4 text-yellow-400"></i>
+                <div>
+                    <h1 class="font-montserrat text-5xl md:text-6xl font-black uppercase">
+                        Culture & Commentary
+                    </h1>
+                    <p class="text-xl md:text-2xl text-gray-300 mt-2">
+                        Bold commentary on current issues
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 border-l-4 border-yellow-400 pl-6">
+                <p class="text-lg leading-relaxed">
+                    Cutting through the noise with principled analysis. We examine cultural trends, critique media narratives, 
+                    and offer sharp takes on politics and society—all grounded in truth and reason rather than partisan 
+                    talking points. Original insight, not echo chamber repetition.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-black uppercase">
+                Latest <span class="text-red-600">Articles</span>
+            </h2>
+            <div class="text-sm text-gray-600">
+                <span id="articleCount">Coming Soon</span>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articlesGrid">
+            <!-- Placeholder articles -->
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="trending-up" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Articles Coming Soon</h3>
+                    <p class="text-gray-500 mb-4">Hot takes on current events and trends</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="message-square" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">More Coming Soon</h3>
+                    <p class="text-gray-500 mb-4">Cultural analysis and media critique</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="edit" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Be the First to Contribute</h3>
+                    <p class="text-gray-500 mb-4">Share your cultural insights</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Topics Covered -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-black uppercase mb-8 text-center">
+                Topics <span class="text-red-600">We Cover</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Media Critique</h3>
+                    <p class="text-sm text-gray-600">Analyzing narratives and exposing bias</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Political Analysis</h3>
+                    <p class="text-sm text-gray-600">Principled takes beyond partisan lines</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Cultural Trends</h3>
+                    <p class="text-sm text-gray-600">Understanding shifts in society</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Current Events</h3>
+                    <p class="text-sm text-gray-600">Timely commentary on breaking news</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Principle -->
+    <section class="py-16 bg-yellow-400 text-black">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i data-feather="zap" class="w-12 h-12 mx-auto mb-6"></i>
+            <blockquote class="text-2xl md:text-3xl font-bold mb-6">
+                "In a time of universal deceit, telling the truth is a revolutionary act."
+            </blockquote>
+            <p class="text-lg font-bold">— Often attributed to George Orwell</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-black text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black uppercase mb-4">
+                Cut Through the <span class="text-red-600">Noise</span>
+            </h2>
+            <p class="text-xl mb-8">
+                Have original insights on current events or cultural trends? We value fresh perspectives 
+                that challenge mainstream narratives with truth and reason.
+            </p>
+            <a href="guidelines.html" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-bold uppercase tracking-wider transition">
+                View Submission Guidelines
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Scripts -->
+    <script src="navigation.js"></script>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Feather Icons initialization -->
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>

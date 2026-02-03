@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catholic Truth | Pillar & Pew</title>
+    
+    <meta name="description" content="Unapologetic defense of the Faith. Catholic apologetics, theology, and spiritual reflection rooted in tradition.">
+    <meta name="keywords" content="Catholic, apologetics, theology, Church, tradition, faith, orthodox Christianity">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+
+    <!-- Sticky Navigation -->
+    <custom-navigation></custom-navigation>
+
+    <!-- Category Header -->
+    <section class="bg-gradient-to-br from-red-900 to-red-950 text-white py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center mb-6">
+                <i data-feather="heart" class="w-16 h-16 mr-4 text-red-300"></i>
+                <div>
+                    <h1 class="font-montserrat text-5xl md:text-6xl font-black uppercase">
+                        Catholic Truth
+                    </h1>
+                    <p class="text-xl md:text-2xl text-red-100 mt-2">
+                        Unapologetic defense of the Faith
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 border-l-4 border-red-300 pl-6">
+                <p class="text-lg leading-relaxed">
+                    Bold Catholic apologetics and Orthodox theology without compromise. We explore Church teaching, 
+                    defend traditional doctrine, critique modern heresies, and examine the intersection of faith and reason. 
+                    Truth-telling with charity, clarity without cowardice.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-3xl font-black uppercase">
+                Latest <span class="text-red-600">Articles</span>
+            </h2>
+            <div class="text-sm text-gray-600">
+                <span id="articleCount">Coming Soon</span>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="articlesGrid">
+            <!-- Placeholder articles -->
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="cross" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Articles Coming Soon</h3>
+                    <p class="text-gray-500 mb-4">Catholic apologetics and theological reflection</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="book" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">More Coming Soon</h3>
+                    <p class="text-gray-500 mb-4">Deep dives into Church teaching and tradition</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+
+            <article class="bg-gray-50 border-2 border-dashed border-gray-300 overflow-hidden flex items-center justify-center h-96">
+                <div class="text-center p-6">
+                    <i data-feather="edit" class="w-12 h-12 mx-auto mb-4 text-gray-400"></i>
+                    <h3 class="text-xl font-bold mb-2 text-gray-700">Be the First to Contribute</h3>
+                    <p class="text-gray-500 mb-4">Share your theological insights</p>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline">
+                        Submit Your Work →
+                    </a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Topics Covered -->
+    <section class="py-16 bg-gray-100">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-black uppercase mb-8 text-center">
+                Topics <span class="text-red-600">We Cover</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Apologetics</h3>
+                    <p class="text-sm text-gray-600">Defending the faith with reason and charity</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Sacred Tradition</h3>
+                    <p class="text-sm text-gray-600">Church Fathers, councils, magisterial teaching</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Modern Heresies</h3>
+                    <p class="text-sm text-gray-600">Critique of errors diluting authentic faith</p>
+                </div>
+                <div class="bg-white p-6 border-l-4 border-red-600">
+                    <h3 class="font-bold text-lg mb-2">Spiritual Life</h3>
+                    <p class="text-sm text-gray-600">Prayer, sacraments, practical holiness</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <section class="py-16 bg-red-600 text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <i data-feather="book-open" class="w-12 h-12 mx-auto mb-6"></i>
+            <blockquote class="text-2xl md:text-3xl font-bold italic mb-6">
+                "To one who has faith, no explanation is necessary. To one without faith, no explanation is possible."
+            </blockquote>
+            <p class="text-lg">— St. Thomas Aquinas</p>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-black text-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black uppercase mb-4">
+                Defend the <span class="text-red-600">Faith</span>
+            </h2>
+            <p class="text-xl mb-8">
+                Have a background in theology or Catholic philosophy? We welcome contributors who can 
+                defend orthodox teaching with clarity, charity, and conviction.
+            </p>
+            <a href="guidelines.html" class="inline-block bg-red-600 hover:bg-red-700 text-white px-8 py-3 font-bold uppercase tracking-wider transition">
+                View Submission Guidelines
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Scripts -->
+    <script src="navigation.js"></script>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Feather Icons initialization -->
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+        
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                if (typeof feather !== 'undefined') {
+                    feather.replace();
+                }
+            }, 100);
+        });
+    </script>
+
+</body>
+</html>
