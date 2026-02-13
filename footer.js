@@ -18,7 +18,7 @@ class CustomFooter extends HTMLElement {
                             <li><a href="#articles">Articles</a></li>
                             <li><a href="#submit">Submit Your Work</a></li>
                             <li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
 
@@ -28,7 +28,7 @@ class CustomFooter extends HTMLElement {
                             <li><a href="guidelines.html">Submission Guidelines</a></li>
                             <li><a href="#" target="_blank" rel="noopener">X / Twitter</a></li>
                             <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
-                            <li><a href="mailto:hello@pillarandpew.com">Email Us</a></li>
+                            <li><a href="contact.html">Email Us</a></li>
                         </ul>
                     </div>
                 </div>

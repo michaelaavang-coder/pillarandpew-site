@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Pillar & Pew</title>
+    
+    <meta name="description" content="Get in touch with Pillar & Pew. Reach out for questions, article submissions, or general inquiries.">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700&display=swap');
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+
+    <!-- Sticky Navigation -->
+    <custom-navigation></custom-navigation>
+
+    <!-- Header Section -->
+    <section class="bg-black text-white py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="font-montserrat text-5xl md:text-6xl font-black uppercase mb-4">
+                Contact Us
+            </h1>
+        </div>
+    </section>
+
+    <!-- Main Contact Content -->
+    <section class="py-16 px-4 max-w-3xl mx-auto">
+
+        <!-- Email CTA -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center justify-center w-20 h-20 bg-red-600 rounded-full mb-6">
+                <i data-feather="mail" class="w-10 h-10 text-white"></i>
+            </div>
+            <h2 class="text-3xl font-black uppercase mb-4">Send Us an Email</h2>
+            <p class="text-lg text-gray-600 mb-8">
+                For questions, feedback, article submissions, or anything else — drop us a line at:
+            </p>
+            <a href="mailto:hello@pillarandpew.com" class="inline-block bg-red-600 hover:bg-red-700 text-white px-10 py-4 font-bold uppercase tracking-wider transition text-lg">
+                hello@pillarandpew.com
+            </a>
+        </div>
+
+        <div class="h-px bg-gray-200 my-16"></div>
+
+        <!-- What to Include -->
+        <div class="mb-16">
+            <h2 class="text-2xl font-black uppercase mb-8 text-center">What to <span class="text-red-600">Include</span></h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- General Inquiries -->
+                <div class="border-2 border-gray-200 p-8">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="message-circle" class="w-6 h-6 text-red-600 mr-3"></i>
+                        <h3 class="text-xl font-bold">General Inquiries</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Questions, feedback, or just want to say hello.</p>
+                    <p class="text-sm text-gray-500">Use any subject line you like. We'll get back to you as soon as we can.</p>
+                </div>
+
+                <!-- Article Submissions -->
+                <div class="border-2 border-red-600 p-8">
+                    <div class="flex items-center mb-4">
+                        <i data-feather="edit-3" class="w-6 h-6 text-red-600 mr-3"></i>
+                        <h3 class="text-xl font-bold">Article Submissions</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">Want to contribute? Send your piece our way.</p>
+                    <ul class="text-sm text-gray-600 space-y-2 mb-4">
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 mr-2 text-red-600 flex-shrink-0 mt-0.5"></i>
+                            <span>Subject: "Article Submission: [Your Title]"</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 mr-2 text-red-600 flex-shrink-0 mt-0.5"></i>
+                            <span>Attach a Word doc or link a Google Doc</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-feather="check" class="w-4 h-4 mr-2 text-red-600 flex-shrink-0 mt-0.5"></i>
+                            <span>Brief intro about yourself</span>
+                        </li>
+                    </ul>
+                    <a href="guidelines.html" class="text-red-600 font-bold hover:underline text-sm">Read full submission guidelines →</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="h-px bg-gray-200 my-16"></div>
+
+        <!-- Response Time -->
+        <div class="text-center mb-16">
+            <i data-feather="clock" class="w-8 h-8 mx-auto mb-4 text-red-600"></i>
+            <h3 class="text-xl font-bold mb-2">Response Time</h3>
+            <p class="text-gray-600">We aim to respond to all inquiries within a few days. Article submissions are reviewed within 2–3 weeks.</p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <custom-footer></custom-footer>
+
+    <!-- Scripts -->
+    <script src="navigation.js"></script>
+    <script src="footer.js"></script>
+    <script src="script.js"></script>
+
+    <!-- Feather Icons initialization -->
+    <script>
+        if (typeof feather !== 'undefined') {
+            feather.replace();
+        }
+        
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof feather !== 'undefined') {
+                feather.replace();
+            }
+        });
+    </script>
+
+</body>
+</html>
