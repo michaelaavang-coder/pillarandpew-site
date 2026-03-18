@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Limits of Liberal Democracy | Pillar & Pew</title>
+
+    <meta name="description" content="Strauss's Classical Natural Right, Catholic Natural Law, and Nietzsche's Natural Aristocracy — a philosophical triangulation of liberalism's deepest crisis.">
+    <meta name="keywords" content="Leo Strauss, natural law, Catholic social teaching, Nietzsche, liberal democracy, political philosophy, natural right">
+    <meta property="og:title" content="The Limits of Liberal Democracy | Pillar & Pew">
+    <meta property="og:description" content="Strauss, Catholic Natural Law, and Nietzsche's Natural Aristocracy illuminate the real stakes of liberalism's failure.">
+    <meta property="og:type" content="article">
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.29.0/dist/feather.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;700;900&display=swap');
+
+        /* Footnote superscripts */
+        .fn {
+            display: inline-block;
+            font-size: 0.7em;
+            font-weight: bold;
+            color: #c8102e;
+            vertical-align: super;
+            line-height: 0;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0 1px;
+            transition: color 0.15s;
+        }
+        .fn:hover { color: #a00d26; text-decoration: underline; }
+
+        /* Footnotes section */
+        .footnotes-section {
+            border-top: 4px solid #c8102e;
+            margin-top: 3rem;
+            padding-top: 2rem;
+        }
+        .footnotes-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: footnote-counter;
+        }
+        .footnotes-list li {
+            display: flex;
+            gap: 0.75rem;
+            font-size: 0.85rem;
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .footnotes-list li:last-child { border-bottom: none; }
+        .fn-number {
+            flex-shrink: 0;
+            font-weight: bold;
+            color: #c8102e;
+            min-width: 1.5rem;
+            font-size: 0.8rem;
+        }
+        .fn-text em { font-style: italic; }
+
+        /* Tooltip for footnotes on hover */
+        .fn-tooltip {
+            position: fixed;
+            background: #111;
+            color: #f9fafb;
+            padding: 0.75rem 1rem;
+            font-size: 0.8rem;
+            line-height: 1.5;
+            max-width: 340px;
+            border-left: 3px solid #c8102e;
+            z-index: 9999;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.15s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .fn-tooltip.visible { opacity: 1; }
+
+        /* TOC sidebar */
+        .toc-box {
+            background: #f9fafb;
+            border-left: 4px solid #c8102e;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .toc-box h4 {
+            font-weight: 900;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.08em;
+            color: #6b7280;
+            margin-bottom: 0.75rem;
+        }
+        .toc-box ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: toc;
+        }
+        .toc-box ol li {
+            counter-increment: toc;
+            font-size: 0.85rem;
+            margin-bottom: 0.4rem;
+        }
+        .toc-box ol li::before {
+            content: counter(toc, upper-roman) ". ";
+            color: #c8102e;
+            font-weight: bold;
+            margin-right: 0.25rem;
+        }
+        .toc-box a {
+            color: #374151;
+            text-decoration: none;
+            transition: color 0.15s;
+        }
+        .toc-box a:hover { color: #c8102e; }
+
+        /* Section headings */
+        .section-heading {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.01em;
+            color: #111;
+            border-bottom: 4px solid #c8102e;
+            padding-bottom: 0.5rem;
+        }
+
+        /* Highlight target footnote */
+        .fn-target {
+            background: rgba(200,16,46,0.08);
+            border-radius: 2px;
+            animation: fn-highlight 2s ease-out;
+        }
+        @keyframes fn-highlight {
+            0% { background: rgba(200,16,46,0.25); }
+            100% { background: rgba(200,16,46,0.08); }
+        }
+
+        /* Paragraph spacing */
+        .article-body p {
+            margin-bottom: 1.5em;
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-black">
+
+    <custom-navigation></custom-navigation>
+
+    <!-- Tooltip element -->
+    <div class="fn-tooltip" id="fnTooltip"></div>
+
+    <main class="py-16 px-4 md:py-20 max-w-4xl mx-auto">
+
+        <!-- Article meta -->
+        <div class="mb-4">
+            <span class="text-red-600 font-bold uppercase text-sm tracking-wider">Philosophy & Reason</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-4xl md:text-5xl font-black uppercase mb-4 tracking-tight text-gray-950 leading-tight">
+            The Limits of Liberal Democracy
+        </h1>
+        <p class="text-xl text-gray-600 mb-6">
+            Strauss's Classical Natural Right, Catholic Natural Law, and Nietzsche's Natural Aristocracy
+        </p>
+
+        <!-- Byline / meta -->
+        <div class="flex items-center text-gray-500 text-sm mb-10 pb-8 border-b-2 border-gray-200 gap-4 flex-wrap">
+            <span>Published March 2026</span>
+            <span>•</span>
+            <span>~20 min read</span>
+            <span>•</span>
+            <span>27 citations</span>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="toc-box">
+            <h4>Contents</h4>
+            <ol>
+                <li><a href="#section-1">The Problem of Liberal Rootlessness</a></li>
+                <li><a href="#section-2">Strauss and the Crisis of Modern Rationalism</a></li>
+                <li><a href="#section-3">Catholic Social Teaching and Liberal Individualism</a></li>
+                <li><a href="#section-4">The Nietzschean Counter-Tradition</a></li>
+                <li><a href="#section-5">Convergences and Divergence</a></li>
+                <li><a href="#section-6">Conclusion: The Theologico-Political Problem</a></li>
+            </ol>
+        </div>
+
+        <!-- Article body -->
+        <div class="article-body">
+
+            <!-- Section I -->
+            <h2 class="section-heading" id="section-1">I. The Problem of Liberal Rootlessness</h2>
+
+            <p>Liberal democracy presents itself as a neutral framework—a set of procedural arrangements by which citizens of differing creeds and competing visions of the good may coexist without bloodshed. It claims to adjudicate between ways of life rather than to prescribe one. Yet this very claim to neutrality is, for two of the twentieth century's most penetrating critics, precisely the source of liberalism's deepest failure. Leo Strauss, writing from within the tradition of classical political philosophy, and the Catholic social magisterium, drawing on Thomistic natural law, both argue that a political order incapable of articulating a substantive account of the human good is, in the end, incapable of sustaining genuine human flourishing. This paper argues that while Strauss and the Catholic tradition converge in diagnosing the pathology of liberal individualism, they diverge in philosophically important ways—ways that are illuminated, by contrast, when we ask what a consistent Nietzschean social teaching would look like. The three positions taken together expose with unusual clarity the real stakes of the debate about political foundations.</p>
+
+            <!-- Section II -->
+            <h2 class="section-heading" id="section-2">II. Strauss and the Crisis of Modern Rationalism</h2>
+
+            <p>Strauss opens <em>Natural Right and History</em> with an observation that is meant to be startling: the United States was founded in the name of a doctrine—that all men are created equal and endowed with certain unalienable rights—yet the reigning intellectual orthodoxy of the twentieth century, historicism and positivism, makes that very doctrine impossible to defend.<a href="#fn1" class="fn" data-fn="1">1</a> If all normative claims are merely the expression of a particular historical moment, and if social science must bracket questions of value to remain scientific, then the proposition that liberal democracy is better than tyranny is, strictly speaking, indefensible. The West, Strauss suggests, is living off the moral capital of a tradition it has philosophically disowned.</p>
+
+            <p>The root of this crisis is what Strauss calls the "first wave" of modernity. The early moderns—Machiavelli, Hobbes, Locke—lowered the aims of politics deliberately. Where classical political philosophy oriented political life toward virtue, toward what Aristotle called the <em>bios politikos</em> as the arena of human excellence, the moderns reconceived political life as a mechanism for the satisfaction of individual rights to self-preservation and property. Virtue was replaced by interest; the common good replaced by the social contract.<a href="#fn2" class="fn" data-fn="2">2</a> This lowering was not accidental but strategic: if politics aimed only at securing conditions of peace and economic liberty, the bloody religious wars of the sixteenth and seventeenth centuries could be avoided.</p>
+
+            <p>Strauss does not deny the prudential gains of this modern settlement. But he insists that the price is philosophically ruinous. A liberalism that cannot say why freedom is choiceworthy—that cannot articulate any account of what freedom is <em>for</em>—has no response to the nihilist who asks: why should I be liberal? It can only appeal to preference or to procedural fairness, both of which are easily unmasked as the expression of particular interests.<a href="#fn3" class="fn" data-fn="3">3</a> The liberal state, in its studied neutrality, produces what Strauss elsewhere calls "permissive egalitarianism"—a culture of relativism in which every way of life is equally valid and therefore, in practice, equally trivial.<a href="#fn4" class="fn" data-fn="4">4</a></p>
+
+            <p>Strauss's proposed remedy is a recovery of classical natural right: the Socratic and Aristotelian conviction that there is a human nature with specific perfections, that some ways of life are genuinely better than others, and that political philosophy's first task is to orient political life toward those genuine goods.<a href="#fn5" class="fn" data-fn="5">5</a> This recovery is not merely nostalgic. Strauss does not imagine that the Greek <em>polis</em> can be revived. But he insists that the philosophical questions the Greeks raised—What is justice? What is the best regime? What is the good life?—are forever valid questions, and that a politics which forecloses them in the name of procedural neutrality has not ended or transcended philosophy but only abandoned it.</p>
+
+            <!-- Section III -->
+            <h2 class="section-heading" id="section-3">III. Catholic Social Teaching and Liberal Individualism</h2>
+
+            <p>The Catholic social tradition shares Strauss's diagnosis of liberal individualism's pathology but locates its source differently and proposes a remedy that goes considerably further. The tradition's foundational modern text, Leo XIII's <em>Rerum Novarum</em> of 1891, does not merely criticize the social effects of laissez-faire capitalism; it criticizes the anthropological premises that make such a social order intelligible. The liberal conception of the individual as a prior atom of will, entering into society by contract for the protection of pre-social rights, is for Leo XIII not just politically unstable but metaphysically false.<a href="#fn6" class="fn" data-fn="6">6</a> The human person is, by nature, social—created for a <em>communio</em> that reflects the Trinitarian life of God.</p>
+
+            <p>This is a point on which the tradition is remarkably consistent. Leo XIII argues that the family, not the individual, is the foundational unit of society, and that the state's legitimate authority is derived from and limited by the natural society of the family and the subsidiary institutions that emerge from it.<a href="#fn7" class="fn" data-fn="7">7</a> Pius XI, in <em>Quadragesimo Anno</em>, sharpens this into the principle of subsidiarity: that higher social bodies ought not to usurp the functions proper to lower ones, and that the purpose of the state is to coordinate and perfect—not absorb and replace, as we see today—the natural communities through which human beings flourish.<a href="#fn8" class="fn" data-fn="8">8</a></p>
+
+            <p>Underlying this social vision is the Thomistic account of natural law: the conviction that human reason can apprehend, in the structure of human nature itself, an ordering toward genuine goods—life, knowledge, friendship, religion—and that law is, at its core, an ordinance of reason directed to the common good.<a href="#fn9" class="fn" data-fn="9">9</a> On this account, the liberal state's claimed neutrality between conceptions of the good is incoherent. Every legal order presupposes some account of what human beings are and what they need; the question is whether that account is true or false, articulate or implicit, and whether it comports with reality as such or merely convention.</p>
+
+            <p>John Paul II's <em>Centesimus Annus</em> makes the critique of liberal neutrality most explicit. Addressing liberal democracy directly, John Paul argues that a democracy without values easily turns into open or thinly disguised totalitarianism. When the state professes agnosticism about moral truth and reduces public discourse to the aggregation of preferences, it does not thereby become neutral; it simply surrenders the moral authority necessary to resist the will of the strongest.<a href="#fn10" class="fn" data-fn="10">10</a> The Catholic critique, in short, is that liberalism's proceduralism does not escape substantive moral commitments—it merely conceals them under a thin patina of procedural distractions, and does so in a way that disarms the social order against its own degeneration.</p>
+
+            <!-- Section IV -->
+            <h2 class="section-heading" id="section-4">IV. The Nietzschean Counter-Tradition</h2>
+
+            <p>Nietzsche occupies a peculiar position in this conversation. He actually agrees with Strauss and the Catholic tradition that liberal democracy is a failure—but he does not necessarily lament this failure; he exults in it as the precondition for something greater. And his account of what should replace liberalism is so radically incompatible with both Strauss and Catholicism that it serves as the most clarifying contrast available.</p>
+
+            <p>The image of the "last man" in the prologue of <em>Thus Spoke Zarathustra</em> is Nietzsche's portrait of the liberal democratic type: comfortable, risk-averse, ironic, incapable of reverence or contempt, blinking contentedly as civilization goes out not with a bang but with a yawn.<a href="#fn11" class="fn" data-fn="11">11</a> The last man has the longest life and the smallest ambition. For Nietzsche, this is not a stable equilibrium but a sign of decadence—of life turning against itself, of the will to power expressing itself as the will to <em>not</em>-suffer.</p>
+
+            <p>Against the last man, Nietzsche posits the <em>Übermensch</em>: the individual who imposes form on chaos, who creates values rather than inheriting them, who says yes to life in all its suffering and contradiction. The <em>Übermensch</em> is not a social type but a solitary one. Nietzsche is explicit in <em>Beyond Good and Evil</em> that the highest human achievement is incompatible with equality: exploitation, he argues, belongs to the essence of living things, and a society that suppresses the rank order of souls in the name of pity suppresses life itself.<a href="#fn12" class="fn" data-fn="12">12</a></p>
+
+            <p>What would a genuinely Nietzschean social teaching look like? Nietzsche himself is dismissive of "social" questions—the <em>Übermensch</em> is not a legislator for the masses but instead a justification for human existence. Yet one can extrapolate from his premises. In <em>On the Genealogy of Morals</em>, Nietzsche argues that the great achievements of civilization are the products of the agonistic struggle between natural aristocracies, and that the leveling tendencies of modernity—democratic equality, Christian pity, socialist solidarity—are expressions of <em>ressentiment</em>, the slave's revenge against the strong.<a href="#fn13" class="fn" data-fn="13">13</a> A Nietzschean politics, therefore, would be an aristocratic one: structured not for the welfare of the many but for the creative self-overcoming of the few. Order would be legitimate insofar as it produces conditions in which great human beings can emerge; it would be illegitimate, indeed life-denying, insofar as it places the comfort of the herd above the flourishing of the exceptional few.</p>
+
+            <p>Nietzsche's critique of democracy is thus deeper and more radical than Strauss's. For Strauss, liberal democracy has abandoned the classical philosophical tradition but remains in principle open to its recovery. For Nietzsche, the entire tradition of Western metaphysics—Platonism and Christianity alike—is the disease of which liberal democracy is merely a late-stage symptom.<a href="#fn14" class="fn" data-fn="14">14</a> The state itself, in Nietzsche's famous phrase, is "the coldest of all cold monsters," and those who find their meaning in collective political life have simply replaced one form of herd mentality with another.<a href="#fn15" class="fn" data-fn="15">15</a> The will to power, properly understood, is creative and individual; its social expression is at most a hierarchy that protects and cultivates the conditions for individual self-overcoming.<a href="#fn16" class="fn" data-fn="16">16</a></p>
+
+            <!-- Section V -->
+            <h2 class="section-heading" id="section-5">V. Convergences and Divergence</h2>
+
+            <p>With all three positions before us, the precise contours of the Straussian–Catholic convergence and their shared divergence from Nietzsche come into focus.</p>
+
+            <p>Strauss and the Catholic tradition agree on the following points: that the human person has a determinate nature with corresponding excellences; that political life is ordered toward some account of the Good and cannot be neutral without self-deception; that the modern reduction of politics to rights-protection and preference-satisfaction has severed the citizen from the moral resources necessary for genuine freedom; and that the recovery of natural law or natural right is the necessary corrective to liberal nihilism. Strauss even shares with Thomism the conviction that reason can apprehend moral truth without the immediate assistance of revelation.<a href="#fn17" class="fn" data-fn="17">17</a></p>
+
+            <p>Yet if both thinkers are right that neutrality is a philosophical fiction, a more unsettling implication follows: liberalism does not so much leave a moral vacancy as create one—and vacancies get filled. The procedural shell of liberal democracy, emptied of substantive accounts of the good, becomes available to whatever moral order is sufficiently organized and confident to operate its institutions from within. This is not a peripheral concern for either tradition but the very heart of their critique, and it sharpens the question that divides them: whether philosophy alone, or philosophy completed by theology, is adequate to resist what moves into the empty space.</p>
+
+            <p>The differences are philosophically important. Strauss's natural right is, in the final analysis, political philosophy's perennial question rather than its settled answer. Strauss is profoundly reluctant to claim that any regime, including the best classical regime, is fully emblematic of human nature. His esotericism reflects a conviction that philosophical life and the political life are in irreducible tension; that the philosopher's pursuit of truth is ultimately incompatible with the city's need for stable, conventional opinion. The Catholic tradition, by contrast, insists that political life can and must be ordered by publicly accessible moral truth. The common good is not merely a philosophical ideal but a practical norm for legislation. <em>Gaudium et Spes</em> is explicit that the political community exists for the common good and that this good constitutes the full justification of political authority.<a href="#fn18" class="fn" data-fn="18">18</a></p>
+
+            <p>A second divergence concerns the ground of natural right. Strauss is willing to defend natural right philosophically, on the basis of reason alone.<a href="#fn19" class="fn" data-fn="19">19</a> He is agnostic, or at least reticent, about the relationship between natural right and divine revelation. The Catholic tradition grounds natural law in the eternal law of God and holds that while reason can apprehend natural law, its deepest intelligibility is theological: the ordering of creatures to their proper ends reflects and participates in divine wisdom. Benedict XVI's <em>Caritas in Veritate</em> argues that human development cannot be understood apart from its transcendent vocation.<a href="#fn20" class="fn" data-fn="20">20</a> This is not a point on which Strauss can follow without abandoning his characteristic philosophical reticence.</p>
+
+            <p>Against Nietzsche, both Strauss and Catholicism converge in affirming the reality of a common human nature that grounds genuine moral obligations and makes political philosophy—in the sense of reasoned discourse about justice—possible at all. Nietzsche denies this. His claim in the <em>Genealogy</em> that the "subject" is a grammatical fiction invented by the weak to blame the strong for being strong is not merely a sociological observation; it is a metaphysical claim that there is no stable human subject who could be the bearer of rights or obligations.<a href="#fn21" class="fn" data-fn="21">21</a> The consequence, as Strauss recognizes, is that Nietzschean politics can offer no account of justice that does not ultimately reduce to the will of the stronger—a conclusion that is not refuted by Nietzsche's aristocratic aesthetics but only dressed in more beautiful language.<a href="#fn22" class="fn" data-fn="22">22</a></p>
+
+            <!-- Section VI -->
+            <h2 class="section-heading" id="section-6">VI. Conclusion: The Theologico-Political Problem</h2>
+
+            <p>The deepest point of divergence between Strauss and the Catholic tradition concerns what Strauss calls the theologico-political problem: the question of the relationship between philosophy and revelation, reason and faith. Strauss treats this as a permanently open question, and indeed as <em>the</em> defining question of Western civilization. He does not believe it can be resolved; he believes that intellectual honesty requires holding it open. The Catholic tradition, from Aquinas forward, holds that reason and faith are not simply opposed but ordered to each other—that philosophy, properly pursued, opens toward theology, and that the full account of the human good requires both.<a href="#fn23" class="fn" data-fn="23">23</a></p>
+
+            <p>This means that Strauss's critique of liberalism, powerful as it is, remains ultimately incomplete from a Catholic perspective. Strauss can show that liberal democracy is philosophically rootless; he cannot, on his own premises, offer the roots. His recovery of classical natural right is a holding action—an attempt to preserve the question of the good against the nihilism of the age—but it lacks the metaphysical and theological grounding that the Catholic tradition regards as necessary for a genuinely ordered political life.</p>
+
+            <p>Nietzsche, for his part, is the most consistent heir of the modern project's rejection of teleology. He accepts that modernity operates as if God is dead. He accepts the dissolution of the natural law and tradition, deduces the will to power as the only honest account of what remains, and then draws the consequences ruthlessly. A Nietzschean social teaching is not social teaching at all. More accurately, it is the justification of hierarchy in the service of individual greatness, with no account of justice that could bind the self-actualization of the strong.<a href="#fn24" class="fn" data-fn="24">24</a></p>
+
+            <p>What emerges from this triangulation is something like the following: Strauss's critique of liberalism is more philosophically rigorous and historically self-aware than it is often credited; the Catholic tradition's critique is more radical in its social implications and more honest about its theological premises. Between them, they identify a genuine crisis in modern political thought—the evacuation of substantive accounts of the good from public life—and they do so from different but complementary directions.<a href="#fn25" class="fn" data-fn="25">25</a> Where they agree is perhaps most important: that a political order unable to give an account of justice grounded in the truth about human nature is not a neutral framework but a fragile one, dependent on habits and institutions it can no longer theoretically defend. The recovery of political philosophy—in Strauss's sense—and the recovery of a fully human politics—in the Catholic sense—are not identical projects, but they are convergent responses to the same civilizational disorder.<a href="#fn26" class="fn" data-fn="26">26</a></p>
+
+            <p>Nietzsche saw the disorder most clearly and proposed the most unsparing remedy: a thoroughgoing transvaluation that would sweep away not only liberal democracy but the entire moral inheritance of the West, leaving only the naked will to power.<a href="#fn27" class="fn" data-fn="27">27</a> That this remedy is incompatible with any recognizable account of justice—including Strauss's and Catholicism's—is not a refutation by mere assertion. It is the demonstration that nihilism, taken seriously as a political program, is not the alternative to failed liberalism but its logical terminus. The task for political philosophy, then, is precisely what Strauss and the Catholic tradition in their different ways have set it: to recover, against the current, a credible account of what human beings are and what they are for.</p>
+
+        </div><!-- end article-body -->
+
+        <!-- Footnotes -->
+        <div class="footnotes-section mt-16">
+            <h3 class="text-xl font-black uppercase mb-6 text-gray-800">Notes &amp; Citations</h3>
+            <ol class="footnotes-list">
+                <li id="fn1">
+                    <span class="fn-number">1</span>
+                    <span class="fn-text">Leo Strauss, <em>Natural Right and History</em> (Chicago: University of Chicago Press, 1953), 3.</span>
+                </li>
+                <li id="fn2">
+                    <span class="fn-number">2</span>
+                    <span class="fn-text">Strauss, <em>Natural Right and History</em>, 6.</span>
+                </li>
+                <li id="fn3">
+                    <span class="fn-number">3</span>
+                    <span class="fn-text">Leo Strauss, <em>Liberalism Ancient and Modern</em> (New York: Basic Books, 1968), 64.</span>
+                </li>
+                <li id="fn4">
+                    <span class="fn-number">4</span>
+                    <span class="fn-text">Leo Strauss, <em>The City and Man</em> (Chicago: University of Chicago Press, 1964), 3.</span>
+                </li>
+                <li id="fn5">
+                    <span class="fn-number">5</span>
+                    <span class="fn-text">Strauss, <em>Natural Right and History</em>, 42–43.</span>
+                </li>
+                <li id="fn6">
+                    <span class="fn-number">6</span>
+                    <span class="fn-text">Pope Leo XIII, <em>Rerum Novarum</em>, Encyclical Letter on Capital and Labor (Vatican City: Holy See, 1891), &sect;7.</span>
+                </li>
+                <li id="fn7">
+                    <span class="fn-number">7</span>
+                    <span class="fn-text">Pope Leo XIII, <em>Rerum Novarum</em>, &sect;4.</span>
+                </li>
+                <li id="fn8">
+                    <span class="fn-number">8</span>
+                    <span class="fn-text">Pope Pius XI, <em>Quadragesimo Anno</em>, Encyclical Letter on Reconstruction of the Social Order (Vatican City: Holy See, 1931), &sect;79.</span>
+                </li>
+                <li id="fn9">
+                    <span class="fn-number">9</span>
+                    <span class="fn-text">Thomas Aquinas, <em>Summa Theologiae</em>, I-II, q. 90, a. 2, trans. Fathers of the English Dominican Province (London: Burns, Oates &amp; Washbourne, 1920).</span>
+                </li>
+                <li id="fn10">
+                    <span class="fn-number">10</span>
+                    <span class="fn-text">Pope John Paul II, <em>Centesimus Annus</em>, Encyclical Letter on the Hundredth Anniversary of Rerum Novarum (Vatican City: Holy See, 1991), &sect;46.</span>
+                </li>
+                <li id="fn11">
+                    <span class="fn-number">11</span>
+                    <span class="fn-text">Friedrich Nietzsche, <em>Thus Spoke Zarathustra</em>, trans. Walter Kaufmann (New York: Penguin Books, 1966), Prologue, &sect;3.</span>
+                </li>
+                <li id="fn12">
+                    <span class="fn-number">12</span>
+                    <span class="fn-text">Friedrich Nietzsche, <em>Beyond Good and Evil</em>, trans. Walter Kaufmann (New York: Vintage Books, 1966), &sect;259.</span>
+                </li>
+                <li id="fn13">
+                    <span class="fn-number">13</span>
+                    <span class="fn-text">Friedrich Nietzsche, <em>On the Genealogy of Morality</em>, trans. Maudemarie Clark and Alan J. Swensen (Indianapolis: Hackett Publishing, 1998), Essay II, &sect;12.</span>
+                </li>
+                <li id="fn14">
+                    <span class="fn-number">14</span>
+                    <span class="fn-text">Nietzsche, <em>Beyond Good and Evil</em>, &sect;22.</span>
+                </li>
+                <li id="fn15">
+                    <span class="fn-number">15</span>
+                    <span class="fn-text">Nietzsche, <em>Thus Spoke Zarathustra</em>, Part I, "On the New Idol."</span>
+                </li>
+                <li id="fn16">
+                    <span class="fn-number">16</span>
+                    <span class="fn-text">Friedrich Nietzsche, <em>The Will to Power</em>, trans. Walter Kaufmann and R. J. Hollingdale (New York: Vintage Books, 1968), &sect;715.</span>
+                </li>
+                <li id="fn17">
+                    <span class="fn-number">17</span>
+                    <span class="fn-text">Strauss, <em>Natural Right and History</em>, 26.</span>
+                </li>
+                <li id="fn18">
+                    <span class="fn-number">18</span>
+                    <span class="fn-text">Second Vatican Council, <em>Gaudium et Spes</em>, Pastoral Constitution on the Church in the Modern World (Vatican City: Holy See, 1965), &sect;74.</span>
+                </li>
+                <li id="fn19">
+                    <span class="fn-number">19</span>
+                    <span class="fn-text">Leo Strauss, <em>What Is Political Philosophy?</em> (Glencoe, IL: Free Press, 1959), 40.</span>
+                </li>
+                <li id="fn20">
+                    <span class="fn-number">20</span>
+                    <span class="fn-text">Pope Benedict XVI, <em>Caritas in Veritate</em>, Encyclical Letter on Integral Human Development (Vatican City: Holy See, 2009), &sect;28.</span>
+                </li>
+                <li id="fn21">
+                    <span class="fn-number">21</span>
+                    <span class="fn-text">Nietzsche, <em>On the Genealogy of Morality</em>, Essay I, &sect;13.</span>
+                </li>
+                <li id="fn22">
+                    <span class="fn-number">22</span>
+                    <span class="fn-text">Strauss, <em>The City and Man</em>, 6.</span>
+                </li>
+                <li id="fn23">
+                    <span class="fn-number">23</span>
+                    <span class="fn-text">Thomas Aquinas, <em>Summa Contra Gentiles</em>, III.17, trans. Vernon J. Bourke (Notre Dame: University of Notre Dame Press, 1975).</span>
+                </li>
+                <li id="fn24">
+                    <span class="fn-number">24</span>
+                    <span class="fn-text">Nietzsche, <em>Beyond Good and Evil</em>, &sect;257.</span>
+                </li>
+                <li id="fn25">
+                    <span class="fn-number">25</span>
+                    <span class="fn-text">Strauss, <em>What Is Political Philosophy?</em>, 17.</span>
+                </li>
+                <li id="fn26">
+                    <span class="fn-number">26</span>
+                    <span class="fn-text">Pope John Paul II, <em>Veritatis Splendor</em>, Encyclical Letter Regarding Certain Fundamental Questions of the Church's Moral Teaching (Vatican City: Holy See, 1993), &sect;48.</span>
+                </li>
+                <li id="fn27">
+                    <span class="fn-number">27</span>
+                    <span class="fn-text">Nietzsche, <em>The Will to Power</em>, &sect;54.</span>
+                </li>
+            </ol>
+        </div>
+
+        <!-- Back button -->
+        <div class="mt-12 flex gap-4 flex-wrap">
+            <a href="../philosophy.html"
+               class="inline-block bg-red-600 text-white px-8 py-3 font-bold uppercase tracking-wider hover:bg-red-700 transition">
+                ← Philosophy &amp; Reason
+            </a>
+            <a href="../index.html"
+               class="inline-block border-2 border-black text-black px-8 py-3 font-bold uppercase tracking-wider hover:bg-black hover:text-white transition">
+                Home
+            </a>
+        </div>
+
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="../navigation.js"></script>
+    <script src="../footer.js"></script>
+    <script src="../script.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof feather !== 'undefined') feather.replace();
+
+            // Build footnote text lookup from the list
+            const fnData = {};
+            document.querySelectorAll('.footnotes-list li').forEach(li => {
+                const id = li.id; // e.g. "fn1"
+                const num = id.replace('fn', '');
+                fnData[num] = li.querySelector('.fn-text').innerHTML;
+            });
+
+            const tooltip = document.getElementById('fnTooltip');
+
+            // Hover tooltip
+            document.querySelectorAll('.fn').forEach(el => {
+                el.addEventListener('mouseenter', function(e) {
+                    const num = this.dataset.fn;
+                    if (!fnData[num]) return;
+                    tooltip.innerHTML = '<strong style="color:#c8102e;margin-right:4px;">' + num + '.</strong> ' + fnData[num];
+                    tooltip.classList.add('visible');
+                    positionTooltip(e);
+                });
+                el.addEventListener('mousemove', positionTooltip);
+                el.addEventListener('mouseleave', function() {
+                    tooltip.classList.remove('visible');
+                });
+
+                // Click: jump to footnote
+                el.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.getElementById('fn' + this.dataset.fn);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        target.classList.add('fn-target');
+                        setTimeout(() => target.classList.remove('fn-target'), 2500);
+                    }
+                    tooltip.classList.remove('visible');
+                });
+            });
+
+            function positionTooltip(e) {
+                const pad = 16;
+                const tw = tooltip.offsetWidth || 340;
+                const th = tooltip.offsetHeight || 80;
+                let x = e.clientX + pad;
+                let y = e.clientY + pad;
+                if (x + tw > window.innerWidth - pad) x = e.clientX - tw - pad;
+                if (y + th > window.innerHeight - pad) y = e.clientY - th - pad;
+                tooltip.style.left = x + 'px';
+                tooltip.style.top = y + 'px';
+            }
+        });
+    </script>
+</body>
+</html>
