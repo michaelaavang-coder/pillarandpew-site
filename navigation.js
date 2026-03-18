@@ -12,7 +12,7 @@ class CustomNavigation extends HTMLElement {
                         <a href="/">Home</a>
                         <a href="#about">About</a>
                         <a href="#articles">Articles</a>
-                        <a href="#submit">Submit</a>
+                        <a href="submit.html">Submit</a>
                         <a href="contact.html">Contact</a>
                         ${user ? `
                             <span class="user-welcome">Welcome, ${user.firstName}</span>
@@ -29,7 +29,7 @@ class CustomNavigation extends HTMLElement {
                     <a href="/">Home</a>
                     <a href="#about">About</a>
                     <a href="#articles">Articles</a>
-                    <a href="#submit">Submit</a>
+                    <a href="submit.html">Submit</a>
                     <a href="contact.html">Contact</a>
                     ${user ? `
                         <span class="mobile-user-welcome">Welcome, ${user.firstName}</span>
