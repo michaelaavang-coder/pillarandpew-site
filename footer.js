@@ -8,7 +8,7 @@ class CustomFooter extends HTMLElement {
                         <div class="footer-brand">PILLAR<span class="amp">&</span>PEW</div>
                         <p class="footer-text">
                             Faith, Reason, and Readiness.  
-                            Bold writing on philosophy, Catholic truth, firearms, and culture — without apology.
+                            Bold writing on philosophy, Catholic truth, firearms, and culture &mdash; without apology.
                         </p>
                     </div>
 
@@ -18,7 +18,7 @@ class CustomFooter extends HTMLElement {
                             <li><a href="#articles">Articles</a></li>
                             <li><a href="#submit">Submit Your Work</a></li>
                             <li><a href="#about">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
 
@@ -28,13 +28,13 @@ class CustomFooter extends HTMLElement {
                             <li><a href="guidelines.html">Submission Guidelines</a></li>
                             <li><a href="#" target="_blank" rel="noopener">X / Twitter</a></li>
                             <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
-                            <li><a href="contact.html">Email Us</a></li>
+                            <li><a href="mailto:hello@pillarandpew.com">Email Us</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="copyright">
-                    Â© ${new Date().getFullYear()} Pillar & Pew. All rights reserved.
+                    &copy; ${new Date().getFullYear()} Pillar & Pew. All rights reserved.
                 </div>
             </footer>
             
